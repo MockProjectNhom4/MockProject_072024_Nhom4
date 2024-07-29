@@ -1,19 +1,19 @@
 // src/components/Login/Login.jsx
 import React from 'react';
 import styles from './Login.module.scss';
+
 const backgroundImageUrl = '../../BackLogin.png';
 const logo = '../../logoWeb.png'
 const logoGg = '../../google_PNG19635.png'
 
 const Login = () => {
     return (
-        <div className={styles.loginContainer} style={{ backgroundImage: `url(${backgroundImageUrl})` }}>
+        <div className={styles.loginContainer} style={{backgroundImage: `url(${backgroundImageUrl})`}}>
             <div className={styles.containerLeft}>
                 <div className={styles.containerLoginLabel}>
                     <div className={styles.lableTop}>
-                        <div className={styles.logo} style={{ backgroundImage: `url(${logo})` }}>
+                        <div className={styles.logo} style={{backgroundImage: `url(${logo})`}}>
                         </div>
-
                     </div>
                     <div className={styles.labelBot}>
                         <div className={styles.containerText}>
@@ -29,32 +29,33 @@ const Login = () => {
                         <div className={styles.containerInput}>
                             <form>
                                 <div className={styles.formField}>
-                                    <span>Email</span> <input type="email" placeholder="Email" className={styles.inputField} />
+                                    <input type="email" placeholder="Email" className={styles.inputField}/>
                                 </div>
                                 <div className={styles.formField}>
-                                    <span>Password</span>
-                                    <input type="password" placeholder="Password" className={styles.inputField} />
+                                    <input type="password" placeholder="Password" className={styles.inputField}/>
                                 </div>
                                 <div className={styles.formField}>
-                                    <a href="#" className={styles.forgotPasswordLink}>Forgot Password?</a>
+                                    <a href="#pass" className={styles.forgotPasswordLink}>Forgot Password?</a>
                                 </div>
                                 <button type="submit" className={styles.submitButton}>Sign in</button>
                             </form>
                             <div className={styles.loginOthers}>
                                 <div className={styles.or}>
-                                    <span />
+                                    <span/>
                                     <p>
                                         Or
                                     </p>
-                                    <span />
+                                    <span/>
                                 </div>
                                 <div className={styles.othersItem}>
-                                    <button type="" className={styles.anotherItemButton}> <span style={{ backgroundImage: `url(${logoGg})` }}></span> <p>Sign in with Google</p></button>
+                                    <button type="" className={styles.anotherItemButton}><span
+                                        style={{backgroundImage: `url(${logoGg})`}}></span> <p>Sign in with Google</p>
+                                    </button>
                                 </div>
 
                             </div>
                             <div className={styles.dontAccount}>
-                                <span>You don't hanve account? <a>Sign Up</a></span>
+                                <span>You don't hanve account? <a href={"#signUp"}>Sign Up</a></span>
                             </div>
                         </div>
 
