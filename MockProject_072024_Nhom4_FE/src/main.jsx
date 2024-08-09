@@ -9,6 +9,7 @@ import Home from "./pages/client/children/home/Home";
 import HistoryPage from './pages/client/HistoryPage';
 import LayoutDefault from "./pages/client/layout/layout default/LayoutDefault";
 import News from "./pages/client/children/news/News";
+import Contact from "./pages/client/children/contact/Contact";
 const router = createBrowserRouter([
   // UI user into here
   {
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
       {
         path: HISTORY_PATH,
         element: <HistoryPage/>
+      },
+      {
+        path: "contact",
+        element: <Contact/>
       },
     ],
     errorElement: <NotFound />,

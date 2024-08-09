@@ -5,7 +5,7 @@ import { Outlet } from "react-router-dom";
 export default function LayoutDefault() {
   return (
     <>
-      <header className="absolute top-0">
+      <header className="absolute top-0 z-50">
         <Navbar />
       </header>
         <main style={{ minHeight: "88vh" }}>
