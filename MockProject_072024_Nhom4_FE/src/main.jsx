@@ -7,7 +7,8 @@ import {
   NEWS_PATH,
   HISTORY_PATH,
   DETAIL_NEWS_PATH,
-  ADMIN_FEEDBACK_PATH
+  ADMIN_FEEDBACK_PATH,
+  CONTACT
 } from "./contants/routers";
 import NotFound from "./pages/error/NotFound";
 import Home from "./pages/client/children/home/Home";
@@ -33,7 +34,7 @@ const router = createBrowserRouter([
         element: <HistoryPage />,
       },
       {
-        path: 'contact',
+        path: CONTACT,
         element: <Contact/>,
       },
     ],
