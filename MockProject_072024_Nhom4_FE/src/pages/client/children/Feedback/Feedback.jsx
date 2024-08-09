@@ -25,118 +25,26 @@ export default function Feedback() {
             <th>rating</th>
             <th></th>
           </tr>
-          <tr>
-            <td>CT0002</td>
-            <td>Mariaádasdasd ádasdas ád ádasd </td>
-            <td>Germa ádasd ád ád ád ád âsd ny</td>
-            <td>09/08/2024</td>
-            <td>09/08/2024</td>
-            <td>rating2</td>
-            <td>
-                <div>
-                  <button>Sửa</button>
-                  <button>Xóa</button>
-                </div>
-            </td>
-          </tr>
-          <tr>
-            <td>CT0002</td>
-            <td>Mariaádasdasd ádasdas ád ádasd </td>
-            <td>Mexico</td>
-            <td>09/08/2024</td>
-            <td>09/08/2024</td>
-            <td>rating1</td>
-            <td>
-                <div>
-                  <button>Sửa</button>
-                  <button>Xóa</button>
-                </div>
-            </td>
-          </tr>
-          <tr>
-            <td>CT0002</td>
-            <td>Mariaádasdasd ádasdas ád ádasd </td>
-            <td>Austria</td>
-            <td>09/08/2024</td>
-            <td>09/08/2024</td>
-            <td>rating3</td>
-            <td>
-                <div>
-                  <button>Sửa</button>
-                  <button>Xóa</button>
-                </div>
-            </td>
-          </tr>
-          <tr>
-            <td>CT0002</td>
-            <td>Mariaádasdasd ádasdas ád ádasd </td>
-            <td>Mexico</td>
-            <td>09/08/2024</td>
-            <td>09/08/2024</td>
-            <td>rating1</td>
-            <td>
-                <div>
-                  <button>Sửa</button>
-                  <button>Xóa</button>
-                </div>
-            </td>
-          </tr>
-          <tr>
-            <td>CT0002</td>
-            <td>Mariaádasdasd ádasdas ád ádasd </td>
-            <td>Austria</td>
-            <td>09/08/2024</td>
-            <td>09/08/2024</td>
-            <td>rating3</td>
-            <td>
-                <div>
-                  <button>Sửa</button>
-                  <button>Xóa</button>
-                </div>
-            </td>
-          </tr>
-          <tr>
-            <td>CT0002</td>
-            <td>Mariaádasdasd ádasdas ád ádasd </td>
-            <td>Mexico</td>
-            <td>09/08/2024</td>
-            <td>09/08/2024</td>
-            <td>rating1</td>
-            <td>
-                <div>
-                  <button>Sửa</button>
-                  <button>Xóa</button>
-                </div>
-            </td>
-          </tr>
-          <tr>
-            <td>CT0002</td>
-            <td>Mariaádasdasd ádasdas ád ádasd </td>
-            <td>Austria</td>
-            <td>09/08/2024</td>
-            <td>09/08/2024</td>
-            <td>rating3</td>
-            <td>
-                <div>
-                  <button>Sửa</button>
-                  <button>Xóa</button>
-                </div>
-            </td>
-          </tr>
-          <tr>
-            <td>CT0002</td>
-            <td>Mariaádasdasd ádasdas ád ádasd </td>
-            <td>Mexico</td>
-            <td>09/08/2024</td>
-            <td>09/08/2024</td>
-            <td>rating1</td>
-            <td>
-                <div>
-                  <button>Sửa</button>
-                  <button>Xóa</button>
-                </div>
-            </td>
-          </tr>
+          
+          {Array(15)
+            .fill(null)
+            .map((data, index) => (
+               <tr>
+                <td>CT0002</td>
+                <td>Mariaádasdasd ádasdas ád ádasd </td>
+                <td>Germa ádasd ád ád ád ád âsd ny</td>
+                <td>09/08/2024</td>
+                <td>09/08/2024</td>
+                <td>rating2</td>
+                <td>
+                    <div>
+                      <button>Sửa</button>
+                      <button>Xóa</button>
+                    </div>
+                </td>
+              </tr>
+            ))}
+
         
          
         </table>
