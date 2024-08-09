@@ -1,10 +1,12 @@
+
 import ReactDOM from "react-dom/client";
 import "./styles/main.css";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import { HOME_PATH, NEWS_PATH } from "./contants/routers";
+import { HOME_PATH, NEWS_PATH, HISTORY_PATH, } from "./contants/routers";
 import NotFound from "./pages/error/NotFound";
 import Home from "./pages/client/children/home/Home";
+import HistoryPage from './pages/client/HistoryPage';
 import LayoutDefault from "./pages/client/layout/layout default/LayoutDefault";
 import News from "./pages/client/children/news/News";
 const router = createBrowserRouter([
@@ -14,8 +16,12 @@ const router = createBrowserRouter([
     element: <LayoutDefault />,
     children: [
       {
-        path: "",
-        element: <Home />,
+        path: '',
+        // element: <Home />
+      },
+      {
+        path: HISTORY_PATH,
+        element: <HistoryPage/>
       },
     ],
     errorElement: <NotFound />,
@@ -31,6 +37,7 @@ const router = createBrowserRouter([
     ],
     errorElement: <NotFound />,
   },
+ 
   // UI admin anđ staff into here
   // {
   // path: ADMIN_PATH,
