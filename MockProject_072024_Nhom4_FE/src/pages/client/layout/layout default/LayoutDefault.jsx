@@ -8,11 +8,9 @@ export default function LayoutDefault() {
       <header className="absolute top-0">
         <Navbar />
       </header>
-      <div className="mt-[128px]">
         <main style={{ minHeight: "88vh" }}>
         <Outlet />
         </main>
-      </div>
       <footer>
         <div className="row">
           <div className="col-l-12">
