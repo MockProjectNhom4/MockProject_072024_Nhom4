@@ -3,9 +3,10 @@ import ReactDOM from 'react-dom/client'
 import './styles/main.css'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
-import { HOME_PATH } from './contants/routers';
+import { HISTORY_PATH, HOME_PATH } from './contants/routers';
 import NotFound from './pages/error/NotFound';
 import Home from './pages/client/children/Home';
+import HistoryPage from './pages/client/HistoryPage';
 import LayoutDefault from "./pages/client/layout/layout default/LayoutDefault";
 const router = createBrowserRouter([
   // UI user into here
@@ -15,11 +16,17 @@ const router = createBrowserRouter([
     children: [
       {
         path: '',
-        element: <Home />
-      }
+        // element: <Home />
+      },
+      {
+        path: HISTORY_PATH,
+        element: <HistoryPage/>
+      },
+   
     ],
     errorElement: <NotFound />
   },
+ 
   // UI admin anđ staff into here
   // {
   // path: ADMIN_PATH,
