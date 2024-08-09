@@ -6,3 +6,4 @@ export const DETAIL_NEWS_PATH = "/:NewsHeadlines";
 export const SIGNUP_PATH = "signup";
 export const SIGNIN_PATH = "signin";
 export const HISTORY_PATH = "history";
+export const ADMIN_FEEDBACK_PATH = "/admin/feedback";

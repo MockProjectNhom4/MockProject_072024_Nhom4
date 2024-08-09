@@ -7,6 +7,7 @@ import {
   NEWS_PATH,
   HISTORY_PATH,
   DETAIL_NEWS_PATH,
+  ADMIN_FEEDBACK_PATH
 } from "./contants/routers";
 import NotFound from "./pages/error/NotFound";
 import Home from "./pages/client/children/home/Home";
@@ -14,6 +15,8 @@ import HistoryPage from "./pages/client/HistoryPage";
 import LayoutDefault from "./pages/client/layout/layout default/LayoutDefault";
 import News from "./pages/client/children/news/News";
 import DetailNews from "./pages/client/children/detail news/DetailNews";
+import Feedback from "./pages/client/children/Feedback/Feedback";
+import Contact from "./pages/client/children/contact/Contact"
 const router = createBrowserRouter([
   // UI user into here
   // route home
@@ -28,6 +31,10 @@ const router = createBrowserRouter([
       {
         path: HISTORY_PATH,
         element: <HistoryPage />,
+      },
+      {
+        path: 'contact',
+        element: <Contact/>,
       },
     ],
     errorElement: <NotFound />,
@@ -71,6 +78,11 @@ const router = createBrowserRouter([
   //     element: <ErrorPage/>
   //   },]
   // }
+  {
+    path: ADMIN_FEEDBACK_PATH,
+    element: <Feedback />,
+    errorElement: <NotFound />,
+  }
   // UI admin anđ staff into here
   // {
   // path: ADMIN_STAFF,
