@@ -1,14 +1,14 @@
 import { useNavigate } from "react-router-dom";
 import style from "./navbar.module.css";
 import { HOME_PATH, NEWS_PATH } from "../../../../../contants/routers";
-export default function Navbar() {
+export default function Navbar({ color }) {
   const navigate = useNavigate();
   const handleNavigation = (url) => {
     navigate(url);
   };
   return (
     <>
-      <div className={style.navbar}>
+      <div className={style.navbar} style={{ backgroundColor: `${color}` }}>
         <div className={"col col-l-2"}>
           <div className={style.logo}>
             <img alt={"logo"} src={"logo.png"} />
