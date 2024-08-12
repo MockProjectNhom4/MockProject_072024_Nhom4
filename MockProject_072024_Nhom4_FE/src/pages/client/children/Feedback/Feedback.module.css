@@ -2,117 +2,136 @@
     margin: 0px;
     padding: 0px;
 }
-.feedbackheader{
-    width: 100%;
-    max-width: 1440px;
-    height: 160px;
-    background-color: #323232;
-    margin: auto;
-    display: grid;
-    place-content: center;
-    position: sticky;
-    top: 0;
-}
 
-
-.feedbackheader .seach {
-    position: relative;
-    width: 600px;
-    height: 80px;
-    display: flex;
-
-
-}
-
-.feedbackheader .seach input{
-    flex: 1;
-    border-radius: 60px 0px 0px 60px;
-    height: 70px;
-    border: 0px;
-    font-size: 30px;
-    padding: 0px 80px 0px 20px;
+body{
     background-color: #D9D9D9;
 }
 
-.feedbackheader .seach div{
-    position: relative;
-    width: 70px;
-    height: 70px;
-    background-color: #D9D9D9;
-    border-radius: 0px 60px 60px 0px;
-}
-
-.feedbackheader .seach div img{
-    background-color: #F6F6F6;
-    width: 50px;
-    height: 50px;
-    border-radius: 60px;
-    padding: 10px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-}
-
-
-
-
-
-
-
-
-.feedbackbody{
+.feedback{
+    background-color: #FFFFFF;
+    max-width: 1360px;
     width: 100%;
     height: fit-content;
-    max-width: 1440px;
     min-height: 500px;
-    background-color: #EAEAEA;
     margin: auto;
 }
 
-.feedbackbody h1{
+.feedback h1{
     text-align: center;
     padding: 20px;
-    font-size: 30px;
-    font-weight: bold;
+    font-size: 50px;
+    color: #FF1E56;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
 }
 
-.feedbackbody .table{
+
+.feedback_seach{
+    width: 100%;
+    max-width: 1440px;
+    height: fit-content;
+    display: grid;
+    place-content: center;
+    margin-bottom: 50px;
+}
+
+
+.feedback_seach .seach {
+    position: relative;
+
+}
+
+.feedback_seach .seach input{
+    width: 600px;
+    height: 55px;
+    border: 2px solid #000000;
+    border-radius: 15px;
+    padding: 0px 80px 0px 20px;
+    font-size: 24px;
+}
+
+.feedback_seach .seach div{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: 50%;
+    right: 0;
+    transform: translate(-30%,-50%);
+}
+
+.feedback_seach .seach div img{
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+
+}
+
+.feedback_create{
+    margin: 20px 70px;
+}
+
+.feedback_create h2{
+    font-size: 32px;
+    padding: 10px 0px;
+}
+
+.feedback_create button{
+    width: 100px;
+    height: 40px;
+    background-color: #FF1E56;
+    border: none;
+    padding: 5px;
+    font-size: 24px;
+    color: white;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+
+.feedback .table{
     display: flex;
     place-content: center;
     width: 100%;
 }
 
-.feedbackbody .table table{
+.feedback .table table{
     width: 95%;
-    background-color: #D9D9D9;
+    background-color: #ffffff;
     border-collapse: collapse;
     max-width: 1440px;
     margin: 0px 20px 20px 20px;
 }
 
-.feedbackbody .table table td, 
-.feedbackbody .table table th {
-    border: 2px solid #B9B9B9;
+
+.feedback .table table td, 
+.feedback .table table th {
+    border: 2px solid black;
     text-align: left;
     padding: 8px;
     text-align: center;
+    font-size: 20px;
+    font-weight: 500;
 }
 
-.feedbackbody .table table th{
+
+
+.feedback .table table td img{
+    width: 20px;
+    height: 20px;
+
+}
+
+.feedback .table table th{
     font-size: 25px;
 }
 
 
-.feedbackbody .table table button{
-    width: 60px;
-    height: 40px;
-    font-size: 20px;
-    margin: 5px 10px;
+
+.feedback .table .action img{
+    width: 30px;
+    height: 30px;
+    margin: 0px 20px;
     cursor: pointer;
-    border: none;
-    border-radius: 15px;
-    background-color: white;
 }
 
 table td:nth-child(7) div{
@@ -120,3 +139,52 @@ table td:nth-child(7) div{
     display: flex;
     place-content: center;
 }
+
+
+
+.feeback_listpage{
+    display: flex;
+    justify-content: right;
+    height: fit-content;
+    margin: 10px;
+}
+
+.listpage_bottom{
+    background-color: #d6d6d6;
+}
+
+.feeback_listpage .page{
+    display: flex;
+    place-content: center;
+    width: 100px;
+
+}
+
+.feeback_listpage .page img{
+    /* padding: 5px; */
+    margin: 5px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+.feeback_listpage .page span{
+    line-height: 30px;
+    font-weight: bold;
+}
+
+.feeback_listpage .listpage{
+    display: flex;
+    place-content: center;
+
+}
+
+.feeback_listpage .listpage select{
+    width: 115px;
+    height: 30px;
+    border-radius: 10px;
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid #3d3d3d;
+}
+
