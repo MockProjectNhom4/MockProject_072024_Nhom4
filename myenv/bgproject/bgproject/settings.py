@@ -81,7 +81,7 @@ WSGI_APPLICATION = 'bgproject.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'mssql',
-        'NAME': 'guardDB',
+        'NAME': 'newbodyguardDB',
         'USER': 'SQLAdmin',
         'PASSWORD': '12345678@a',
         'HOST': 'mockprojecsqlserver.database.windows.net',
