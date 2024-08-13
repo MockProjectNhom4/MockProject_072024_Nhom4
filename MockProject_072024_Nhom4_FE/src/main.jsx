@@ -8,7 +8,9 @@ import {
   HISTORY_PATH,
   DETAIL_NEWS_PATH,
   ADMIN_FEEDBACK_PATH,
-  CONTACT
+  CONTACT,
+  SIGNIN_PATH,
+  SIGNUP_PATH
 } from "./contants/routers";
 import NotFound from "./pages/error/NotFound";
 import Home from "./pages/client/children/home/Home";
@@ -18,8 +20,15 @@ import News from "./pages/client/children/news/News";
 import DetailNews from "./pages/client/children/detail news/DetailNews";
 import Feedback from "./pages/client/children/Feedback/Feedback";
 import Contact from "./pages/client/children/contact/Contact"
+import Login from "./pages/login/loginform";
 const router = createBrowserRouter([
   // UI user into here
+  {
+    path: SIGNIN_PATH,
+    element: <Login/>
+
+
+  },
   // route home
   {
     path: HOME_PATH,
