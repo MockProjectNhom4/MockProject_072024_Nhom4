@@ -6,5 +6,10 @@ export const NEWS_PATH = "/news";
 export const SIGNUP_PATH = "signup";
 export const SIGNIN_PATH = "signin";
 export const HISTORY_PATH = "history";
+export const REQUEST_PATH = "/request";
+export const REQUEST_LIST_PATH = "/request/list";
+export const LIST_PATH = "/list";
+export const ADMIN_FEEDBACK_PATH = "/admin/feedback";
+
 
 

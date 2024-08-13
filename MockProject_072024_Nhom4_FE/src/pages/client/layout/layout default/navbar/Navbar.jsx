@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import style from "./navbar.module.css";
-import { HOME_PATH, NEWS_PATH } from "../../../../../contants/routers";
+import { HOME_PATH, NEWS_PATH, REQUEST_PATH } from "../../../../../contants/routers";
 export default function Navbar() {
   const navigate = useNavigate();
   const handleNavigation = (url) => {
@@ -19,10 +19,13 @@ export default function Navbar() {
           <ul className={style.navItem}>
             <li onClick={() => handleNavigation(HOME_PATH)}>home</li>
             <li onClick={() => handleNavigation(NEWS_PATH)}>news</li>
+
             <li>about us</li>
             <li>services</li>
             <li>recruitment</li>
             <li>contact us</li>
+            {/* <li onClick={() => handleNavigation(REQUEST_PATH)}>Request</li> */}
+
             <li>
               <button>Login</button>
             </li>

@@ -84,7 +84,7 @@ function Home() {
             vitae voluptate ea similique sapiente veniam ratione cum sequi
             facere, nesciunt ex?
           </div>
-          <div class={style.signature}>
+          <div className={style.signature}>
             <hr />
             <span>John Doe</span>
             <hr />
