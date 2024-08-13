@@ -9,6 +9,8 @@ import {
   DETAIL_NEWS_PATH,
   ADMIN_FEEDBACK_PATH,
   CONTACT,
+  SERVICE_PATH,
+  SERVICE_DETAIL_PATH
   SIGNIN_PATH,
   SIGNUP_PATH
 } from "./contants/routers";
@@ -20,6 +22,8 @@ import News from "./pages/client/children/news/News";
 import DetailNews from "./pages/client/children/detail news/DetailNews";
 import Feedback from "./pages/client/children/Feedback/Feedback";
 import Contact from "./pages/client/children/contact/Contact"
+import Service from "./pages/client/children/service/Service";
+import ServiceDetail from "./pages/client/children/service/serviceDetail/ServiceDetail";
 import Login from "./pages/login/loginform";
 const router = createBrowserRouter([
   // UI user into here
@@ -45,6 +49,14 @@ const router = createBrowserRouter([
       {
         path: CONTACT,
         element: <Contact/>,
+      },
+      {
+        path: SERVICE_PATH,
+        element: <Service/>,
+      },
+      {
+        path: SERVICE_DETAIL_PATH,
+        element: <ServiceDetail/>
       },
     ],
     errorElement: <NotFound />,
