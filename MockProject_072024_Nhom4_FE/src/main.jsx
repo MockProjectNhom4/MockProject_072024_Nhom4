@@ -18,6 +18,7 @@ import News from "./pages/client/children/news/News";
 import DetailNews from "./pages/client/children/detail news/DetailNews";
 import Feedback from "./pages/client/children/Feedback/Feedback";
 import Contact from "./pages/client/children/contact/Contact"
+import LoginBodyGuard from "./pages/bodyGuard_v1/Login/Login"
 const router = createBrowserRouter([
   // UI user into here
   // route home
@@ -83,7 +84,9 @@ const router = createBrowserRouter([
     path: ADMIN_FEEDBACK_PATH,
     element: <Feedback />,
     errorElement: <NotFound />,
-  }
+  },
+
+
   // UI admin anđ staff into here
   // {
   // path: ADMIN_STAFF,
@@ -98,7 +101,16 @@ const router = createBrowserRouter([
   //     element: <ErrorPage/>
   //   },]
   // }
+  // /////////////////////////////////////VIEWS BODYGUARD //////////
+  {
+    path: "/bodyguard/auth/login",
+    element: <LoginBodyGuard/>
+  }
 ]);
+
+
+
+
 const queryClient = new QueryClient();
 ReactDOM.createRoot(document.getElementById("root")).render(
   <QueryClientProvider client={queryClient}>
