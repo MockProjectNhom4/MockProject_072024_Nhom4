@@ -1,11 +1,17 @@
 // src/components/Login/Login.jsx
 import React from 'react';
 import styles from './Login.module.css';
+import { useNavigate } from "react-router-dom";
+import { SIGNUP_PATH } from '../../contants/routers';
 const backgroundImageUrl = '../../BackLogin.png';
 const logo = '../../../logo.png'
 const logoGg = '../../../google_PNG19635.png'
 
 const Login = () => {
+    const navigate = useNavigate();
+    const handleNavigation = (url) => {
+        navigate(url);
+      };
     return (
         <div className={styles.loginContainer} style={{ backgroundImage: `url(${backgroundImageUrl})` }}>
             <div className={styles.containerLeft}>
@@ -55,7 +61,7 @@ const Login = () => {
                             </div>
                             <div className={styles.dontAccount}>
                                 <span>You don't hanve account? 
-                                    <a>Sign Up</a>
+                                    <a onClick={() => handleNavigation(SIGNUP_PATH)}>Sign Up</a>
                                 </span>
                             </div>
                         </div>
