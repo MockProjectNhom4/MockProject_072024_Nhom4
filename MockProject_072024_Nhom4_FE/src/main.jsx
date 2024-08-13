@@ -8,7 +8,9 @@ import {
   HISTORY_PATH,
   DETAIL_NEWS_PATH,
   ADMIN_FEEDBACK_PATH,
-  CONTACT
+  CONTACT,
+  SERVICE_PATH,
+  SERVICE_DETAIL_PATH
 } from "./contants/routers";
 import NotFound from "./pages/error/NotFound";
 import Home from "./pages/client/children/home/Home";
@@ -18,6 +20,8 @@ import News from "./pages/client/children/news/News";
 import DetailNews from "./pages/client/children/detail news/DetailNews";
 import Feedback from "./pages/client/children/Feedback/Feedback";
 import Contact from "./pages/client/children/contact/Contact"
+import Service from "./pages/client/children/service/Service";
+import ServiceDetail from "./pages/client/children/service/serviceDetail/ServiceDetail";
 const router = createBrowserRouter([
   // UI user into here
   // route home
@@ -36,6 +40,15 @@ const router = createBrowserRouter([
       {
         path: CONTACT,
         element: <Contact/>,
+      },
+      {
+        path: SERVICE_PATH,
+        element: <Service/>,
+      
+      },
+      {
+        path: SERVICE_DETAIL_PATH,
+        element: <ServiceDetail/>
       },
     ],
     errorElement: <NotFound />,
