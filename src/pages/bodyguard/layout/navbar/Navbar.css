@@ -1,0 +1,68 @@
+.Nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    width: 360px;
+    height: 76px;
+    position: relative;
+}
+
+.Logo > img {
+    height: 50px;
+    width: 50px;
+    margin-left: 20px;
+}
+
+.NavItem{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.TopNav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 0;
+    margin-right: 20px;
+    background-color: white;
+    font-size: 13px;
+}
+
+.TopNav > button{
+    border-radius: 0;
+    border: 1px solid black;
+    width: 31px;
+    height: 31px;
+    padding: 0; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.TopNav > button:focus {
+    background-color: #FFAC41;
+    outline: none;
+}
+.MenuItem{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-right: 20px;
+    position: absolute;
+    background-color: black;
+    color: white;
+    right: 0;
+    padding: 10px;
+    z-index: 1000;
+    border-top: 2px solid #FFAC41;
+}
+.ItemLink{
+    padding: 5px 0;
+    font-size: 12px;
+}
+.ItemLink:hover{
+    color: #FF1E56;
+}

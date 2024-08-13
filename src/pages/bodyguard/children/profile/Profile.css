@@ -1,0 +1,73 @@
+.ProfileMain{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    max-width: 360px;
+}
+.Section1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+}
+.Avatar{
+    margin: 20px;
+    width: 180px;
+    height: 155px;
+}
+.GuardName{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0 10px 0;
+    font-size: 20px;
+    font-weight: bold;
+    gap: 20px;
+}
+.Section2{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+span{
+    margin-left: 30px;
+}
+.ColorText{
+    color:  #FFAC41;
+    font-weight: 500;
+}
+.Certificate{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.CertBtn{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px solid #FFAC41;
+    padding: 5px;
+    gap: 10px;
+    color: #989898;
+    font-weight: 500;
+}
+.CertBtn:hover, .SaveButton:hover{
+    background-color: #FFAC41;
+    color: black;
+    border: 2px solid black;
+}
+.SaveButton{
+    margin-left: auto;
+    background-color: #FFAC41;
+    font-size: 15px;
+    padding: 5px 30px;
+    border-radius: 5px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
