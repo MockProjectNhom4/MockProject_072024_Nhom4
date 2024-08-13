@@ -11,6 +11,8 @@ import {
   CONTACT,
   SERVICE_PATH,
   SERVICE_DETAIL_PATH
+  SIGNIN_PATH,
+  SIGNUP_PATH
 } from "./contants/routers";
 import NotFound from "./pages/error/NotFound";
 import Home from "./pages/client/children/home/Home";
@@ -22,8 +24,15 @@ import Feedback from "./pages/client/children/Feedback/Feedback";
 import Contact from "./pages/client/children/contact/Contact"
 import Service from "./pages/client/children/service/Service";
 import ServiceDetail from "./pages/client/children/service/serviceDetail/ServiceDetail";
+import Login from "./pages/login/loginform";
 const router = createBrowserRouter([
   // UI user into here
+  {
+    path: SIGNIN_PATH,
+    element: <Login/>
+
+
+  },
   // route home
   {
     path: HOME_PATH,
@@ -44,7 +53,6 @@ const router = createBrowserRouter([
       {
         path: SERVICE_PATH,
         element: <Service/>,
-      
       },
       {
         path: SERVICE_DETAIL_PATH,
