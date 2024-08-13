@@ -13,7 +13,7 @@ export default function Profile(){
                     <h1>John Doe</h1>
                     <button type="submit">
                         <FontAwesomeIcon icon={faPencil} 
-                        style={{color: '#FF1E56', fontSize: '15px' }}/>
+                        style={{color: '#FF1E56', fontSize: 'auto' }}/>
                     </button>
                 </div>
             </div>
