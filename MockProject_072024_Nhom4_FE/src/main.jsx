@@ -8,7 +8,11 @@ import {
   HISTORY_PATH,
   DETAIL_NEWS_PATH,
   ADMIN_FEEDBACK_PATH,
-  CONTACT
+  CONTACT,
+  SERVICE_PATH,
+  SERVICE_DETAIL_PATH
+  SIGNIN_PATH,
+  SIGNUP_PATH
 } from "./contants/routers";
 import NotFound from "./pages/error/NotFound";
 import Home from "./pages/client/children/home/Home";
@@ -19,8 +23,17 @@ import DetailNews from "./pages/client/children/detail news/DetailNews";
 import Feedback from "./pages/client/children/Feedback/Feedback";
 import Contact from "./pages/client/children/contact/Contact"
 import LoginBodyGuard from "./pages/bodyGuard_v1/Login/Login"
+import Service from "./pages/client/children/service/Service";
+import ServiceDetail from "./pages/client/children/service/serviceDetail/ServiceDetail";
+import Login from "./pages/login/loginform";
 const router = createBrowserRouter([
   // UI user into here
+  {
+    path: SIGNIN_PATH,
+    element: <Login/>
+
+
+  },
   // route home
   {
     path: HOME_PATH,
@@ -37,6 +50,14 @@ const router = createBrowserRouter([
       {
         path: CONTACT,
         element: <Contact/>,
+      },
+      {
+        path: SERVICE_PATH,
+        element: <Service/>,
+      },
+      {
+        path: SERVICE_DETAIL_PATH,
+        element: <ServiceDetail/>
       },
     ],
     errorElement: <NotFound />,
