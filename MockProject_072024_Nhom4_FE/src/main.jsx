@@ -8,7 +8,9 @@ import {
   HISTORY_PATH,
   DETAIL_NEWS_PATH,
   ADMIN_FEEDBACK_PATH,
-  CONTACT
+  CONTACT,
+  BODYGUARD_PATH,
+  BODYGUARD_PROFILE_PATH,
 } from "./contants/routers";
 import NotFound from "./pages/error/NotFound";
 import Home from "./pages/client/children/home/Home";
@@ -17,8 +19,23 @@ import LayoutDefault from "./pages/client/layout/layout default/LayoutDefault";
 import News from "./pages/client/children/news/News";
 import DetailNews from "./pages/client/children/detail news/DetailNews";
 import Feedback from "./pages/client/children/Feedback/Feedback";
-import Contact from "./pages/client/children/contact/Contact"
+import Contact from "./pages/client/children/contact/Contact";
+import Profile from './pages/bodyguard/children/profile/Profile';
+import LayoutDefaultBodyGuard from "./pages/bodyguard/layout/LayoutDefaultBodyGuard";
+
 const router = createBrowserRouter([
+  // UI bodyguard
+  {
+    path: BODYGUARD_PATH,
+    element: <LayoutDefaultBodyGuard/>,
+    children: [
+      {
+        path: BODYGUARD_PROFILE_PATH,
+        element: <Profile />,
+      },
+    ],
+    errorElement: <NotFound />,
+  },
   // UI user into here
   // route home
   {

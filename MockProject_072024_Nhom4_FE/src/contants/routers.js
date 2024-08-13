@@ -8,3 +8,6 @@ export const SIGNIN_PATH = "signin";
 export const HISTORY_PATH = "history";
 export const ADMIN_FEEDBACK_PATH = "/admin/feedback";
 export const CONTACT = "/contact";
+
+export const BODYGUARD_PATH = "/bodyguard";
+export const BODYGUARD_PROFILE_PATH = "/bodyguard/profile";

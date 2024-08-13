@@ -1,0 +1,43 @@
+.Nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    width: 360px;
+    height: 76px;
+}
+
+.Logo > img {
+    height: 50px;
+    width: 50px;
+    margin-left: 20px;
+}
+
+.NavItem{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 0;
+    margin-right: 20px;
+    background-color: white;
+}
+
+.NavItem > button{
+    border-radius: 0;
+    border: 1px solid black;
+    width: 25px;
+    height: 25px;
+    padding: 0; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.NavItem > button:hover{
+    border: 1px solid black;
+}
+
+.NavItem > button:focus {
+    background-color: #FFAC41;
+    outline: none;
+}
