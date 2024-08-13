@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import style from "./news.module.css";
+import { useEffect } from "react";
 
 const NEWS_HEADLINES = "Tiêu đề tin tức";
 
@@ -8,6 +9,9 @@ export default function News() {
   const handleNavigation = (URL) => {
     navigate(URL);
   };
+  useEffect(() => {
+    window.scrollTo(0,0)
+},[])
   return (
     <>
       <div className={style.news}>

@@ -10,9 +10,9 @@ import {
   ADMIN_FEEDBACK_PATH,
   CONTACT,
   SERVICE_PATH,
-  SERVICE_DETAIL_PATH
+  SERVICE_DETAIL_PATH,
   SIGNIN_PATH,
-  SIGNUP_PATH
+  SIGNUP_PATH,
 } from "./contants/routers";
 import NotFound from "./pages/error/NotFound";
 import Home from "./pages/client/children/home/Home";
@@ -31,7 +31,6 @@ const router = createBrowserRouter([
   {
     path: SIGNIN_PATH,
     element: <Login/>
-
 
   },
   // route home

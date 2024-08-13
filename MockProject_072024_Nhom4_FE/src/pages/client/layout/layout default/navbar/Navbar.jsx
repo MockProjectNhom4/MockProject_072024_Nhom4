@@ -1,10 +1,11 @@
 import { useNavigate } from "react-router-dom";
 import style from "./navbar.module.css";
-import { HOME_PATH, NEWS_PATH,CONTACT , SIGNIN_PATH} from "../../../../../contants/routers";
+import { HOME_PATH, NEWS_PATH, CONTACT ,SIGNIN_PATH, SERVICE_PATH} from "../../../../../contants/routers";
 export default function Navbar({ color }) {
   const navigate = useNavigate();
   const handleNavigation = (url) => {
     navigate(url);
+    console.log("url", url)
   };
   return (
     <>
@@ -20,7 +21,7 @@ export default function Navbar({ color }) {
             <li onClick={() => handleNavigation(HOME_PATH)}>home</li>
             <li onClick={() => handleNavigation(NEWS_PATH)}>news</li>
             <li>about us</li>
-            <li>services</li>
+            <li onClick={() => handleNavigation(SERVICE_PATH)}>services</li>
             <li>recruitment</li>
             <li onClick={() => handleNavigation(CONTACT)}>contact us</li>
             <li>

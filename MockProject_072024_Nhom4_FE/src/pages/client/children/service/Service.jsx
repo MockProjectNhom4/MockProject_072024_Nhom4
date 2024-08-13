@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {useNavigate } from "react-router-dom";
 const bodyGuard5 = "../public/background/bg5.png"
 const data1 = [{
@@ -29,11 +29,28 @@ function Service() {
     const handlerRead = (service) => {
         navigate(service.name, {state:{service}})
     }
-    
+    useEffect(() => {
+        window.scrollTo(0,100)
+        setIsVisible(true);
+    },[])
+    const [isVisible, setIsVisible] = useState(false);
+
+    useEffect(() => {
+      // Set the visibility to true after the component mounts
+      
+    }, []);
     return (
         <>
             {/* main */}
-            <img className="object-cover w-full h-[600px]" src={bodyGuard5} alt="bodyGuard5" />
+            <img className="relative object-cover w-full h-[600px]" src={bodyGuard5} alt="bodyGuard5" />
+            <div className={`bg-[#D9D9D980] text-center  top-1/3 absolute w-full h-fit transition-opacity duration-1000 ease-in-out 
+            ${
+                isVisible ? 'opacity-100' : 'opacity-0'
+            }`}>
+                <h1 className=" text-8xl text-[#ffac41] font-semibold p-4">
+                        SERVICE
+                </h1>
+            </div>
             <div className="flex space-x-3 text-3xl mx-24 my-7">
                 <p>Home</p>
                 <p>/</p>
