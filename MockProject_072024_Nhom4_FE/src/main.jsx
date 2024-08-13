@@ -9,6 +9,8 @@ import {
   DETAIL_NEWS_PATH,
   ADMIN_FEEDBACK_PATH,
   CONTACT,
+  SERVICE_PATH,
+  SERVICE_DETAIL_PATH,
   SIGNIN_PATH,
   SIGNUP_PATH,
   BODYGUARD_PATH,
@@ -25,6 +27,9 @@ import Contact from "./pages/client/children/contact/Contact";
 import Profile from './pages/bodyguard/children/profile/Profile';
 import LayoutDefaultBodyGuard from "./pages/bodyguard/layout/LayoutDefaultBodyGuard";
 import Signup from "./pages/signup/Signup";
+import LoginBodyGuard from "./pages/bodyGuard_v1/Login/Login"
+import Service from "./pages/client/children/service/Service";
+import ServiceDetail from "./pages/client/children/service/serviceDetail/ServiceDetail";
 import Login from "./pages/login/loginform";
 const router = createBrowserRouter([
 
@@ -70,6 +75,14 @@ const router = createBrowserRouter([
       {
         path: CONTACT,
         element: <Contact/>,
+      },
+      {
+        path: SERVICE_PATH,
+        element: <Service/>,
+      },
+      {
+        path: SERVICE_DETAIL_PATH,
+        element: <ServiceDetail/>
       },
     ],
     errorElement: <NotFound />,
@@ -117,7 +130,9 @@ const router = createBrowserRouter([
     path: ADMIN_FEEDBACK_PATH,
     element: <Feedback />,
     errorElement: <NotFound />,
-  }
+  },
+
+
   // UI admin anđ staff into here
   // {
   // path: ADMIN_STAFF,
@@ -132,7 +147,16 @@ const router = createBrowserRouter([
   //     element: <ErrorPage/>
   //   },]
   // }
+  // /////////////////////////////////////VIEWS BODYGUARD //////////
+  {
+    path: "/bodyguard/auth/login",
+    element: <LoginBodyGuard/>
+  }
 ]);
+
+
+
+
 const queryClient = new QueryClient();
 ReactDOM.createRoot(document.getElementById("root")).render(
   <QueryClientProvider client={queryClient}>
