@@ -13,6 +13,8 @@ import {
   SERVICE_DETAIL_PATH,
   SIGNIN_PATH,
   SIGNUP_PATH,
+  BODYGUARD_PATH,
+  BODYGUARD_PROFILE_PATH,
 } from "./contants/routers";
 import NotFound from "./pages/error/NotFound";
 import Home from "./pages/client/children/home/Home";
@@ -21,18 +23,45 @@ import LayoutDefault from "./pages/client/layout/layout default/LayoutDefault";
 import News from "./pages/client/children/news/News";
 import DetailNews from "./pages/client/children/detail news/DetailNews";
 import Feedback from "./pages/client/children/Feedback/Feedback";
-import Contact from "./pages/client/children/contact/Contact"
+import Contact from "./pages/client/children/contact/Contact";
+import Profile from './pages/bodyguard/children/profile/Profile';
+import LayoutDefaultBodyGuard from "./pages/bodyguard/layout/LayoutDefaultBodyGuard";
+import Signup from "./pages/signup/Signup";
 import LoginBodyGuard from "./pages/bodyGuard_v1/Login/Login"
 import Service from "./pages/client/children/service/Service";
 import ServiceDetail from "./pages/client/children/service/serviceDetail/ServiceDetail";
 import Login from "./pages/login/loginform";
 const router = createBrowserRouter([
-  // UI user into here
+
+    // UI user into here
+    {
+      path: SIGNIN_PATH,
+      element: <Login/>
+  
+    },
+    // UI user into here
+    {
+      path: SIGNUP_PATH,
+      element: <Signup/>
+  
+    },
+
+  // UI bodyguard
+
+
   {
-    path: SIGNIN_PATH,
-    element: <Login/>
+    path: BODYGUARD_PATH,
+    element: <LayoutDefaultBodyGuard/>,
+    children: [
+      {
+        path: BODYGUARD_PROFILE_PATH,
+        element: <Profile />,
+      },
+    ],
+    errorElement: <NotFound />,
 
   },
+
   // route home
   {
     path: HOME_PATH,
