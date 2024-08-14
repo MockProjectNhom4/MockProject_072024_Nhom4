@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import "./styles/main.css";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import { HOME_PATH, NEWS_PATH, HISTORY_PATH, REQUEST_PATH, REQUEST_LIST_PATH, LIST_PATH, ADMIN_FEEDBACK_PATH } from "./contants/routers";
+import { HOME_PATH, NEWS_PATH, HISTORY_PATH, REQUEST_PATH, REQUEST_LIST_PATH } from "./contants/routers";
 import NotFound from "./pages/error/NotFound";
 import Home from "./pages/client/children/home/Home";
 import HistoryPage from './pages/client/HistoryPage';
@@ -11,8 +11,7 @@ import LayoutDefault from "./pages/client/layout/layout default/LayoutDefault";
 import News from "./pages/client/children/news/News";
 import Request from "./pages/client/children/request/form/Request";
 import RequestList from "./pages/client/children/request/list/Requestlist";
-import List from "./pages/client/children/list/list";
-import Feedback from "./pages/client/children/Feedback/Feedback";
+
 const router = createBrowserRouter([
   // UI user into here
   {
@@ -58,18 +57,7 @@ const router = createBrowserRouter([
     errorElement: <NotFound />,
   },
  
- 
-  {
-    path: LIST_PATH,
-    element: <List />,
-    errorElement: <NotFound />,
-  },
-  {
-    path: ADMIN_FEEDBACK_PATH,
-    element: <Feedback />,
-    errorElement: <NotFound />,
-  }
- 
+
   // UI admin anđ staff into here
   // {
   // path: ADMIN_PATH,
