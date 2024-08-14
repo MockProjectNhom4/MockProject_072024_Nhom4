@@ -2,7 +2,8 @@
   --height-card: 400px;
 }
 .news {
-  padding: 160px 56px 56px 56px;
+  background-color: #fff4f4;
+  padding: 112px 56px 56px 56px;
 }
 
 .nav {
@@ -35,7 +36,7 @@
 }
 
 .card:hover {
-  box-shadow: 4px 4px 2px hsla(0, 0%, 0%, 0.675);
+  box-shadow: 4px 4px 2px hsla(345, 100%, 56%, 0.671);
 }
 
 .cardImage img {

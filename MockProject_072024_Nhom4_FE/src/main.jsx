@@ -1,34 +1,104 @@
-
 import ReactDOM from "react-dom/client";
 import "./styles/main.css";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import { HOME_PATH, NEWS_PATH, HISTORY_PATH, REQUEST_PATH, REQUEST_LIST_PATH } from "./contants/routers";
+
+import {
+  HOME_PATH,
+  NEWS_PATH,
+  HISTORY_PATH,
+  DETAIL_NEWS_PATH,
+  ADMIN_FEEDBACK_PATH,
+  CONTACT,
+  SERVICE_PATH,
+  SERVICE_DETAIL_PATH,
+  SIGNIN_PATH,
+  SIGNUP_PATH,
+  BODYGUARD_PATH,
+  BODYGUARD_PROFILE_PATH,
+  REQUEST_PATH, 
+  REQUEST_LIST_PATH,
+} from "./contants/routers";
+
 import NotFound from "./pages/error/NotFound";
 import Home from "./pages/client/children/home/Home";
-import HistoryPage from './pages/client/HistoryPage';
+import HistoryPage from "./pages/client/HistoryPage";
 import LayoutDefault from "./pages/client/layout/layout default/LayoutDefault";
 import News from "./pages/client/children/news/News";
+
+import DetailNews from "./pages/client/children/detail news/DetailNews";
+import Feedback from "./pages/client/children/Feedback/Feedback";
+import Contact from "./pages/client/children/contact/Contact";
+import Profile from './pages/bodyguard/children/profile/Profile';
+import LayoutDefaultBodyGuard from "./pages/bodyguard/layout/LayoutDefaultBodyGuard";
+import Signup from "./pages/signup/Signup";
+import LoginBodyGuard from "./pages/bodyGuard_v1/Login/Login"
+import Service from "./pages/client/children/service/Service";
+import ServiceDetail from "./pages/client/children/service/serviceDetail/ServiceDetail";
+import Login from "./pages/login/loginform";
 import Request from "./pages/client/children/request/form/Request";
 import RequestList from "./pages/client/children/request/list/Requestlist";
 
 const router = createBrowserRouter([
-  // UI user into here
+
+    // UI user into here
+    {
+      path: SIGNIN_PATH,
+      element: <Login/>
+  
+    },
+    // UI user into here
+    {
+      path: SIGNUP_PATH,
+      element: <Signup/>
+  
+    },
+
+  // UI bodyguard
+
+
+  {
+    path: BODYGUARD_PATH,
+    element: <LayoutDefaultBodyGuard/>,
+    children: [
+      {
+        path: BODYGUARD_PROFILE_PATH,
+        element: <Profile />,
+      },
+    ],
+    errorElement: <NotFound />,
+
+  },
+
+  // route home
   {
     path: HOME_PATH,
     element: <LayoutDefault />,
     children: [
       {
-        path: '',
-        element: <Home />
+        path: "",
+        element: <Home />,
       },
       {
         path: HISTORY_PATH,
-        element: <HistoryPage/>
+        element: <HistoryPage />,
+      },
+      {
+        path: CONTACT,
+        element: <Contact/>,
+      },
+      {
+        path: SERVICE_PATH,
+        element: <Service/>,
+      },
+      {
+        path: SERVICE_DETAIL_PATH,
+        element: <ServiceDetail/>
       },
     ],
     errorElement: <NotFound />,
   },
+  // route news
   {
     path: NEWS_PATH,
     element: <LayoutDefault />,
@@ -40,7 +110,21 @@ const router = createBrowserRouter([
     ],
     errorElement: <NotFound />,
   },
+
+  // route detail news
   {
+    path: DETAIL_NEWS_PATH,
+    element: <LayoutDefault />,
+    children: [
+      {
+        path: "",
+        element: <DetailNews />,
+      },
+    ],
+    errorElement: <NotFound />,
+  },
+
+      {
     path: REQUEST_PATH,
     element: <LayoutDefault />,
     children: [
@@ -51,12 +135,13 @@ const router = createBrowserRouter([
     ],
     errorElement: <NotFound />,
   },
+    
   {
     path: REQUEST_LIST_PATH,
     element: <RequestList />,
     errorElement: <NotFound />,
   },
- 
+
 
   // UI admin anđ staff into here
   // {
@@ -72,6 +157,13 @@ const router = createBrowserRouter([
   //     element: <ErrorPage/>
   //   },]
   // }
+  {
+    path: ADMIN_FEEDBACK_PATH,
+    element: <Feedback />,
+    errorElement: <NotFound />,
+  },
+
+
   // UI admin anđ staff into here
   // {
   // path: ADMIN_STAFF,
@@ -86,7 +178,16 @@ const router = createBrowserRouter([
   //     element: <ErrorPage/>
   //   },]
   // }
+  // /////////////////////////////////////VIEWS BODYGUARD //////////
+  {
+    path: "/bodyguard/auth/login",
+    element: <LoginBodyGuard/>
+  }
 ]);
+
+
+
+
 const queryClient = new QueryClient();
 ReactDOM.createRoot(document.getElementById("root")).render(
   <QueryClientProvider client={queryClient}>
