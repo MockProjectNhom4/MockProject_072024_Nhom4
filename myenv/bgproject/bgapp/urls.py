@@ -27,4 +27,10 @@ urlpatterns = [
     path('createpayment/', views.createPayment, name="createPayment"),
     path('updatepayment/<int:pk>/', views.updatePayment, name="updatePayment"),
     path('deletepayment/<int:pk>/', views.deletePayment, name="deletePayment"),
+    
+    path('paymenttransactions/', views.getPaymentTransactions, name="getPaymentTransactions"),
+    path('paymenttransaction/<int:pk>/', views.getPaymentTransaction, name="getPaymentTransaction"),
+    path('createpaymenttransaction/', views.createPaymentTransaction, name="createPaymentTransaction"),
+    path('updatepaymenttransaction/<int:pk>/', views.updatePaymentTransaction, name="updatePaymentTransaction"),
+    path('deletepaymenttransaction/<int:pk>/', views.deletePaymentTransaction, name="deletePaymentTransaction"),
 ]

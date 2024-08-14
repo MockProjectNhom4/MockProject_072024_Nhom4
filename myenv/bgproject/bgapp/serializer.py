@@ -20,3 +20,8 @@ class PaymentSerializer(serializers.ModelSerializer):
     class Meta:
         model = TblPayment
         fields = '__all__'
+        
+class PaymentTransactionSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = TblPaymentTransaction
+        fields = '__all__'

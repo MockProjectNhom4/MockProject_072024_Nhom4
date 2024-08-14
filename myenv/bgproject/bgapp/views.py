@@ -218,3 +218,48 @@ def deletePayment(request, pk):
         raise NotFound(detail="Payment not found", code=404)
     payment.delete()
     return Response(status=204)
+
+#Payment_transactions
+@api_view(['GET'])
+def getPaymentTransactions(request):
+    transactions = TblPaymentTransaction.objects.all()
+    serializer = PaymentTransactionSerializer(transactions, many=True)
+    return Response(serializer.data)
+
+@api_view(['GET'])
+def getPaymentTransaction(request, pk):
+    try:
+        transaction = TblPaymentTransaction.objects.get(id=pk)
+    except TblPaymentTransaction.DoesNotExist:
+        raise NotFound(detail="Payment transaction not found", code=404)
+    serializer = PaymentTransactionSerializer(transaction, many=False)
+    return Response(serializer.data)
+
+@api_view(['POST'])
+def createPaymentTransaction(request):
+    serializer = PaymentTransactionSerializer(data=request.data)
+    if serializer.is_valid():
+        serializer.save()
+        return Response(serializer.data, status=201)
+    return Response(serializer.errors, status=400)
+
+@api_view(['PUT'])
+def updatePaymentTransaction(request, pk):
+    try:
+        transaction = TblPaymentTransaction.objects.get(id=pk)
+    except TblPaymentTransaction.DoesNotExist:
+        raise NotFound(detail="Payment transaction not found", code=404)
+    serializer = PaymentTransactionSerializer(transaction, data=request.data)
+    if serializer.is_valid():
+        serializer.save()
+        return Response(serializer.data)
+    return Response(serializer.errors, status=400)
+
+@api_view(['DELETE'])
+def deletePaymentTransaction(request, pk):
+    try:
+        transaction = TblPaymentTransaction.objects.get(id=pk)
+    except TblPaymentTransaction.DoesNotExist:
+        raise NotFound(detail="Payment transaction not found", code=404)
+    transaction.delete()
+    return Response(status=204)
