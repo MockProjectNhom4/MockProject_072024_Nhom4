@@ -173,3 +173,48 @@ def deleteFeedback(request, pk):
         raise NotFound(detail="Feedback not found", code=404)
     feedback.delete()
     return Response(status=204)
+
+#Feedback
+@api_view(['GET'])
+def getPayments(request):
+    payments = TblPayment.objects.all()
+    serializer = PaymentSerializer(payments, many=True)
+    return Response(serializer.data)
+
+@api_view(['GET'])
+def getPayment(request, pk):
+    try:
+        payment = TblPayment.objects.get(id=pk)
+    except TblPayment.DoesNotExist:
+        raise NotFound(detail="Payment not found", code=404)
+    serializer = PaymentSerializer(payment, many=False)
+    return Response(serializer.data)
+
+@api_view(['POST'])
+def createPayment(request):
+    serializer = PaymentSerializer(data=request.data)
+    if serializer.is_valid():
+        serializer.save()
+        return Response(serializer.data, status=201)
+    return Response(serializer.errors, status=400)
+
+@api_view(['PUT'])
+def updatePayment(request, pk):
+    try:
+        payment = TblPayment.objects.get(id=pk)
+    except TblPayment.DoesNotExist:
+        raise NotFound(detail="Payment not found", code=404)
+    serializer = PaymentSerializer(payment, data=request.data)
+    if serializer.is_valid():
+        serializer.save()
+        return Response(serializer.data)
+    return Response(serializer.errors, status=400)
+
+@api_view(['DELETE'])
+def deletePayment(request, pk):
+    try:
+        payment = TblPayment.objects.get(id=pk)
+    except TblPayment.DoesNotExist:
+        raise NotFound(detail="Payment not found", code=404)
+    payment.delete()
+    return Response(status=204)

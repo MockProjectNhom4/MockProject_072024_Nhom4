@@ -15,3 +15,8 @@ class FeedbackSerializer(serializers.ModelSerializer):
     class Meta:
         model = TblFeedback
         fields = '__all__'
+        
+class PaymentSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = TblPayment
+        fields = '__all__'
