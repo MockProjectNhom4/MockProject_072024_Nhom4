@@ -1,5 +1,5 @@
 // src/components/Login/Login.jsx
-import React, { useState } from 'react';
+import { useState } from 'react';
 import styles from './Login.module.css';
 import { useNavigate } from "react-router-dom";
 import axios from 'axios';
@@ -11,9 +11,9 @@ const logoGg = '../../../google_PNG19635.png';
 
 const Login = () => {
     const navigate = useNavigate();
-    const [email, setEmail] = useState(''); // Đổi USER_NAME thành email
+    const [login, setLogin] = useState(''); 
     const [PASSWORD, setPassword] = useState('');
-    const [error, setError] = useState(''); // Trạng thái để lưu thông báo lỗi
+    const [error, setError] = useState('');
 
     const handleNavigation = (url) => {
         navigate(url);
@@ -22,12 +22,12 @@ const Login = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         setError(''); // Reset thông báo lỗi trước khi gửi yêu cầu
-        if (!email || !PASSWORD) {
-            setError('Please enter both email and password.'); // Thông báo nếu thiếu thông tin
+        if (!login || !PASSWORD) {
+            setError('Please enter both email and password.');
             return;
         }
         try {
-            const response = await axios.post('https://intern-server-8n7t.onrender.com/api/login', { email, PASSWORD });
+            const response = await axios.post('http://localhost:3000/api/login', { login, PASSWORD });
 
             if (response.data.token) {
                 // Lưu token vào localStorage
@@ -64,13 +64,13 @@ const Login = () => {
                         <div className={styles.containerInput}>
                             <form onSubmit={handleSubmit}>
                                 <div className={styles.formField}>
-                                    <span>Email</span> 
+                                    <span>Email or Username</span> 
                                     <input
-                                        type="email" // Thay đổi loại trường nhập
-                                        placeholder="Email"
+                                        type="text"
+                                        placeholder="Email or Username"
                                         className={styles.inputField}
-                                        value={email}
-                                        onChange={(e) => setEmail(e.target.value)}
+                                        value={login}
+                                        onChange={(e) => setLogin(e.target.value)}
                                     />
                                 </div>
                                 <div className={styles.formField}>
