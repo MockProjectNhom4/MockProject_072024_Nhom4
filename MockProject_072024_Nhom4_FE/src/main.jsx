@@ -2,6 +2,7 @@ import ReactDOM from "react-dom/client";
 import "./styles/main.css";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
+
 import {
   HOME_PATH,
   NEWS_PATH,
@@ -15,12 +16,16 @@ import {
   SIGNUP_PATH,
   BODYGUARD_PATH,
   BODYGUARD_PROFILE_PATH,
+  REQUEST_PATH, 
+  REQUEST_LIST_PATH,
 } from "./contants/routers";
+
 import NotFound from "./pages/error/NotFound";
 import Home from "./pages/client/children/home/Home";
 import HistoryPage from "./pages/client/HistoryPage";
 import LayoutDefault from "./pages/client/layout/layout default/LayoutDefault";
 import News from "./pages/client/children/news/News";
+
 import DetailNews from "./pages/client/children/detail news/DetailNews";
 import Feedback from "./pages/client/children/Feedback/Feedback";
 import Contact from "./pages/client/children/contact/Contact";
@@ -31,6 +36,9 @@ import LoginBodyGuard from "./pages/bodyGuard_v1/Login/Login"
 import Service from "./pages/client/children/service/Service";
 import ServiceDetail from "./pages/client/children/service/serviceDetail/ServiceDetail";
 import Login from "./pages/login/loginform";
+import Request from "./pages/client/children/request/form/Request";
+import RequestList from "./pages/client/children/request/list/Requestlist";
+
 const router = createBrowserRouter([
 
     // UI user into here
@@ -102,6 +110,7 @@ const router = createBrowserRouter([
     ],
     errorElement: <NotFound />,
   },
+
   // route detail news
   {
     path: DETAIL_NEWS_PATH,
@@ -114,6 +123,25 @@ const router = createBrowserRouter([
     ],
     errorElement: <NotFound />,
   },
+
+      {
+    path: REQUEST_PATH,
+    element: <LayoutDefault />,
+    children: [
+      {
+        path: "",
+        element: <Request />,
+      },
+    ],
+    errorElement: <NotFound />,
+  },
+    
+  {
+    path: REQUEST_LIST_PATH,
+    element: <RequestList />,
+    errorElement: <NotFound />,
+  },
+
 
   // UI admin anđ staff into here
   // {
