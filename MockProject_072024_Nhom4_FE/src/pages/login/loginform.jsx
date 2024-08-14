@@ -35,6 +35,7 @@ const Login = () => {
             if (response.data.token) {
                 // Lưu token vào localStorage
                 localStorage.setItem('token', response.data.token);
+                localStorage.setItem('isLoggedIn', true);
 
                 // Chuyển hướng đến trang dựa trên Roleid
                 navigate(response.data.redirectUrl);
