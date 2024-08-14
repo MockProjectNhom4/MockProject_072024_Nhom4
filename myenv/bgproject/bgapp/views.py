@@ -14,6 +14,7 @@ from .models import *
 def getRoutes(request):
     return Response('hello world')
 
+#Contract
 @api_view(['GET'])
 def getContracts(request):
     contracts = TblContract.objects.all()
@@ -83,13 +84,13 @@ def getContracts(request):
     serializer = ContractsSerializer(sorted_contracts, many=True)
     return Response(serializer.data)
 
+#Contract_Details
 @api_view(['GET'])
 def getContractDetails(request):
     contract_details = TblContractDetail.objects.all()
     serializer = ContractDetailSerializer(contract_details, many=True)
     return Response(serializer.data)
 
-# Lấy chi tiết hợp đồng theo ID
 @api_view(['GET'])
 def getContractDetail(request, pk):
     try:
@@ -99,7 +100,6 @@ def getContractDetail(request, pk):
     serializer = ContractDetailSerializer(contract_detail, many=False)
     return Response(serializer.data)
 
-# Tạo mới chi tiết hợp đồng
 @api_view(['POST'])
 def createContractDetail(request):
     serializer = ContractDetailSerializer(data=request.data)
@@ -108,7 +108,6 @@ def createContractDetail(request):
         return Response(serializer.data, status=201)
     return Response(serializer.errors, status=400)
 
-# Cập nhật chi tiết hợp đồng
 @api_view(['PUT'])
 def updateContractDetail(request, pk):
     try:
@@ -121,7 +120,6 @@ def updateContractDetail(request, pk):
         return Response(serializer.data)
     return Response(serializer.errors, status=400)
 
-# Xóa chi tiết hợp đồng
 @api_view(['DELETE'])
 def deleteContractDetail(request, pk):
     try:
@@ -129,4 +127,49 @@ def deleteContractDetail(request, pk):
     except TblContractDetail.DoesNotExist:
         raise NotFound(detail="Contract detail not found", code=404)
     contract_detail.delete()
+    return Response(status=204)
+
+#Feedback
+@api_view(['GET'])
+def getFeedbacks(request):
+    feedbacks = TblFeedback.objects.all()
+    serializer = FeedbackSerializer(feedbacks, many=True)
+    return Response(serializer.data)
+
+@api_view(['GET'])
+def getFeedback(request, pk):
+    try:
+        feedback = TblFeedback.objects.get(id=pk)
+    except TblFeedback.DoesNotExist:
+        raise NotFound(detail="Feedback not found", code=404)
+    serializer = FeedbackSerializer(feedback, many=False)
+    return Response(serializer.data)
+
+@api_view(['POST'])
+def createFeedback(request):
+    serializer = FeedbackSerializer(data=request.data)
+    if serializer.is_valid():
+        serializer.save()
+        return Response(serializer.data, status=201)
+    return Response(serializer.errors, status=400)
+
+@api_view(['PUT'])
+def updateFeedback(request, pk):
+    try:
+        feedback = TblFeedback.objects.get(id=pk)
+    except TblFeedback.DoesNotExist:
+        raise NotFound(detail="Feedback not found", code=404)
+    serializer = FeedbackSerializer(feedback, data=request.data)
+    if serializer.is_valid():
+        serializer.save()
+        return Response(serializer.data)
+    return Response(serializer.errors, status=400)
+
+@api_view(['DELETE'])
+def deleteFeedback(request, pk):
+    try:
+        feedback = TblFeedback.objects.get(id=pk)
+    except TblFeedback.DoesNotExist:
+        raise NotFound(detail="Feedback not found", code=404)
+    feedback.delete()
     return Response(status=204)

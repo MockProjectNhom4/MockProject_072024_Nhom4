@@ -15,4 +15,10 @@ urlpatterns = [
     path('createcontractdetail/', views.createContractDetail, name="createContractDetail"),
     path('updatecontractdetail/<int:pk>/', views.updateContractDetail, name="updateContractDetail"),
     path('deletecontractdetail/<int:pk>/', views.deleteContractDetail, name="deleteContractDetail"),
+    
+    path('feedbacks/', views.getFeedbacks, name="getFeedbacks"),
+    path('feedback/<int:pk>/', views.getFeedback, name="getFeedback"),
+    path('createfeedback/', views.createFeedback, name="createFeedback"),
+    path('updatefeedback/<int:pk>/', views.updateFeedback, name="updateFeedback"),
+    path('deletefeedback/<int:pk>/', views.deleteFeedback, name="deleteFeedback"),
 ]

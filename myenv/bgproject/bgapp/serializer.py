@@ -10,3 +10,8 @@ class ContractDetailSerializer(serializers.ModelSerializer):
     class Meta:
         model=TblContractDetail
         fields='__all__'
+        
+class FeedbackSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = TblFeedback
+        fields = '__all__'
