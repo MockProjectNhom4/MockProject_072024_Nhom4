@@ -30,10 +30,10 @@ public class Registration {
     @Column(name = "Requirement")
     private String requirement;
 
-    @Column(name = "ManQuantity")
+    @Column(name = "man_quantity")
     private Integer manQuantity;
 
-    @Column(name = "WomanQuantity")
+    @Column(name = "woman_quantity")
     private Integer womanQuantity;
 
     @Column(name = "Status")
@@ -46,8 +46,8 @@ public class Registration {
     private Timestamp interviewTime;
 
     @Column(name = "Interview_Location")
-    private Timestamp interviewLocation;
+    private String interviewLocation;
 
-    @Column(name = "CreateAt")
+    @Column(name = "create_at")
     private Timestamp createAt;
 }

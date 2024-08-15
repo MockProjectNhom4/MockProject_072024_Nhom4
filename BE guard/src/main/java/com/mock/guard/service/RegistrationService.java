@@ -19,7 +19,7 @@ public class RegistrationService {
 
     // get
     public List<Registration> getRegistration() {
-        return registrationRepository.findAll().stream().toList();
+        return registrationRepository.findAll();
     }
 
     // get by id
@@ -35,15 +35,21 @@ public class RegistrationService {
     // update
     public Registration updateRegistration(int id, Registration registration) {
         Registration existingRegistration = getRegistrationById(id);
-        if (existingRegistration != null) {
+        if (existingRegistration == null) {
             return null;
         }
+
         return registrationRepository.save(registration);
     }
 
     // delete
-    public void deleteRegistration(int id) {
+    public boolean deleteRegistration(int id) {
+        Registration existingRegistration = getRegistrationById(id);
+        if (existingRegistration == null) {
+            return false;
+        }
         registrationRepository.deleteById(id);
+        return true;
 
     }
 }

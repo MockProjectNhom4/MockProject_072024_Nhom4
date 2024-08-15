@@ -3,6 +3,10 @@ package com.mock.guard.controller;
 import com.mock.guard.entity.Registration;
 import com.mock.guard.service.RegistrationService;
 import jakarta.validation.Valid;
+import lombok.AccessLevel;
+import lombok.RequiredArgsConstructor;
+import lombok.experimental.FieldDefaults;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,7 +17,10 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/request")
-public class RequestController {
+@RequiredArgsConstructor
+@FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
+@Slf4j
+public class RegistrationController {
 
     @Autowired
     private RegistrationService service;
@@ -33,8 +40,11 @@ public class RequestController {
     // get by id
     @GetMapping("/{id}")
     public ResponseEntity<Registration> get(@PathVariable(name = "id") Integer id) {
-        Registration product = service.getRegistrationById(id);
-        return new ResponseEntity<>(product, HttpStatus.OK);
+        Registration item = service.getRegistrationById(id);
+        if (item == null) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+        return new ResponseEntity<>(item, HttpStatus.OK);
     }
 
     // insert new
@@ -46,15 +56,20 @@ public class RequestController {
 
     // update
     @PutMapping("/{id}")
-    public ResponseEntity<Registration> update(@PathVariable(name ="id") Integer id, @RequestBody Registration item) {
+    public ResponseEntity<Registration> update(@PathVariable(name = "id") Integer id, @RequestBody Registration item) {
         Registration itemUpdate = service.updateRegistration(id, item);
+        if (itemUpdate == null) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
         return new ResponseEntity<>(itemUpdate, HttpStatus.OK);
     }
 
     // delete
     @DeleteMapping("/{id}")
     public ResponseEntity<Registration> delete(@PathVariable Integer id) {
-        service.deleteRegistration(id);
+        if(!service.deleteRegistration(id)){
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
