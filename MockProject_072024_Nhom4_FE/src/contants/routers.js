@@ -20,3 +20,4 @@ export const SERVICE_DETAIL_PATH = "service/:slug";
 
 export const BODYGUARD_PATH = "/bodyguard";
 export const BODYGUARD_PROFILE_PATH = "/bodyguard/profile";
+export const BODYGUARD_WORKING_SCHEDULE_PATH = "/bodyguard/working_schedule";
