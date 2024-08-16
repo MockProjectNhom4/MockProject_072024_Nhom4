@@ -17,6 +17,7 @@ import {
   BODYGUARD_PATH,
   BODYGUARD_PROFILE_PATH,
   BODYGUARD_WORKING_SCHEDULE_PATH,
+  BODYGUARD_TRAINING_SCHEDULE_PATH,
   REQUEST_PATH, 
   REQUEST_LIST_PATH,
 } from "./contants/routers";
@@ -40,6 +41,7 @@ import Login from "./pages/login/loginform";
 import Request from "./pages/client/children/request/form/Request";
 import RequestList from "./pages/client/children/request/list/Requestlist";
 import WorkingSchedule from "./pages/bodyguard/children/workingSchedule/WorkingSchedule";
+import TrainingSchedule from "./pages/bodyguard/children/trainingSchedule/TrainingSchedule";
 const router = createBrowserRouter([
 
     // UI user into here
@@ -69,6 +71,9 @@ const router = createBrowserRouter([
       {
         path:BODYGUARD_WORKING_SCHEDULE_PATH,
         element: <WorkingSchedule/>
+      }, {
+        path:BODYGUARD_TRAINING_SCHEDULE_PATH,
+        element: <TrainingSchedule/>
       }
     ],
     errorElement: <NotFound />,
