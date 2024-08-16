@@ -6,6 +6,8 @@ import {
   CONTACT,
   SIGNIN_PATH,
   SERVICE_PATH,
+  FEEDBACK,
+  HISTORY_PATH
 } from "../../../../../contants/routers";
 import { useState } from "react";
 import useClickOutside from "../../../../../hooks/useClickOutside";
@@ -115,8 +117,8 @@ export default function Navbar({ color }) {
               >
                 <li>Requests</li>
                 <li>Contracts</li>
-                <li>Historys</li>
-                <li>Feedbacks</li>
+                <li onClick={() => handleNavigation(HISTORY_PATH)} >Historys</li>
+                <li onClick={() => handleNavigation(FEEDBACK)}>Feedbacks</li>
               </ul>
             </li>
           </ul>

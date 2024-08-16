@@ -18,6 +18,7 @@ import {
   BODYGUARD_PROFILE_PATH,
   REQUEST_PATH, 
   REQUEST_LIST_PATH,
+  FEEDBACK
 } from "./contants/routers";
 
 import NotFound from "./pages/error/NotFound";
@@ -27,7 +28,7 @@ import LayoutDefault from "./pages/client/layout/layout default/LayoutDefault";
 import News from "./pages/client/children/news/News";
 
 import DetailNews from "./pages/client/children/detail news/DetailNews";
-import Feedback from "./pages/client/children/Feedback/Feedback";
+import Feedback from "./pages/client/children/feedback/Feedback";
 import Contact from "./pages/client/children/contact/Contact";
 import Profile from "./pages/bodyguard/children/profile/Profile";
 import LayoutDefaultBodyGuard from "./pages/bodyguard/layout/LayoutDefaultBodyGuard";
@@ -37,7 +38,10 @@ import Service from "./pages/client/children/service/Service";
 import ServiceDetail from "./pages/client/children/service/serviceDetail/ServiceDetail";
 import Login from "./pages/login/loginform";
 import Request from "./pages/client/children/request/form/Request";
+// import Feedback from "./pages/client/children/feedback/Feedback";
 import RequestList from "./pages/client/children/request/list/Requestlist";
+
+
 
 const router = createBrowserRouter([
   // UI user into here
@@ -89,6 +93,10 @@ const router = createBrowserRouter([
         path: SERVICE_DETAIL_PATH,
         element: <ServiceDetail />,
       },
+      {
+        path: FEEDBACK,
+        element: <Feedback/>,
+      }
     ],
     errorElement: <NotFound />,
   },

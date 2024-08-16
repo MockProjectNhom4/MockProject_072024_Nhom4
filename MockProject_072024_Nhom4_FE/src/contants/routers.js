@@ -5,7 +5,7 @@ export const NEWS_PATH = "/news";
 export const DETAIL_NEWS_PATH = "/:NewsHeadlines";
 export const SIGNUP_PATH = "/signup";
 export const SIGNIN_PATH = "/signin";
-export const HISTORY_PATH = "history";
+export const HISTORY_PATH = "/history";
 
 export const REQUEST_PATH = "/request";
 export const REQUEST_LIST_PATH = "/request/list";
@@ -14,6 +14,7 @@ export const REQUEST_LIST_PATH = "/request/list";
 
 export const ADMIN_FEEDBACK_PATH = "/admin/feedback";
 export const CONTACT = "/contact";
+export const FEEDBACK = "/feedback";
 export const SERVICE_PATH = "/service";
 export const SERVICE_DETAIL_PATH = "service/:slug";
 
