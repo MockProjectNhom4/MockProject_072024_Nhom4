@@ -42,13 +42,13 @@ import Login from "./pages/login/loginform";
 import Request from "./pages/client/children/request/form/Request";
 // import Feedback from "./pages/client/children/feedback/Feedback";
 import RequestList from "./pages/client/children/request/list/Requestlist";
-<<<<<<< HEAD
+// <<<<<<< HEAD
 
-=======
+// =======
 import WorkingSchedule from "./pages/bodyguard/children/workingSchedule/WorkingSchedule";
 import TrainingSchedule from "./pages/bodyguard/children/trainingSchedule/TrainingSchedule";
-const router = createBrowserRouter([
->>>>>>> c0e129fd8d3848b8adeb09d9a54b6278d1bb5b9f
+// const router = createBrowserRouter([
+// >>>>>>> c0e129fd8d3848b8adeb09d9a54b6278d1bb5b9f
 
 
 const router = createBrowserRouter([
