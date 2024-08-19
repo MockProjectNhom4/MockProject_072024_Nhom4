@@ -4,6 +4,7 @@ export default function Feedback() {
   return (
     <>
      {/* header */}
+     <div className={style.headfeedback}></div>
      <div className={style.feedback}>
       <h1>Feedback</h1>
 

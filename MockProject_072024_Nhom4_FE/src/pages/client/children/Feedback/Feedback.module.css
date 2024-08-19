@@ -6,7 +6,11 @@
 body{
     background-color: #D9D9D9;
 }
-
+.headfeedback{
+    height: 115px;
+    width: 100%;
+    background-color: #D9D9D9;
+}
 .feedback{
     background-color: #FFFFFF;
     max-width: 1360px;
