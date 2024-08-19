@@ -99,7 +99,7 @@
 }
 
 .inputField {
-    /* width: 100%; */
+    width: 100% !important;
     margin-top: 7px;
     padding: 10px;
     border: 1px solid #ddd;

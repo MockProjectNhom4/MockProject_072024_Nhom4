@@ -4,6 +4,8 @@ import styles from './Login.module.css';
 import { useNavigate } from "react-router-dom";
 import axios from 'axios';
 import { SIGNUP_PATH } from '../../contants/routers';
+// import Notification from '../library/notification';
+import Notification from '../library/notification';
 
 const backgroundImageUrl = '../../BackLogin.png';
 const logo = '../../../logo.png';
@@ -14,10 +16,22 @@ const Login = () => {
     const [email, setEmail] = useState(''); // Đổi USER_NAME thành email
     const [PASSWORD, setPassword] = useState('');
     const [error, setError] = useState(''); // Trạng thái để lưu thông báo lỗi
+    const [isShow, setIsshow] = useState(false);
+    const [title, setTitle] = useState("");
+    const [messenger, setMessenger] = useState("");
+    const [status, setStatus] = useState(false);
+
+
 
     const handleNavigation = (url) => {
         navigate(url);
     };
+    const setNotify = (title, message, status, isShow) => {
+        setTitle(title)
+        setMessenger(message)
+        setStatus(status);
+        setIsshow(isShow)
+    }
 
     const handleSubmit = async (e) => {
 
@@ -25,7 +39,8 @@ const Login = () => {
         console.log(email, PASSWORD);
         setError(''); // Reset thông báo lỗi trước khi gửi yêu cầu
         if (!email || !PASSWORD) {
-            setError('Please enter both email and password.'); // Thông báo nếu thiếu thông tin
+            setNotify("Login failed!", "Please enter both email and password.", false, true)
+            // setError('Please enter both email and password.'); // Thông báo nếu thiếu thông tin
             return;
         }
         try {
@@ -33,21 +48,32 @@ const Login = () => {
             console.log(response);
 
             if (response.data.token) {
+                setNotify("Đăng nhập thành công", "Vui lòng chờ vài giây...", true, true)
                 // Lưu token vào localStorage
+                // setTitle("Đăng nhập thành công")
+                // setMessenger("Vui lòng chờ vài giây...")
+                // setStatus(true);
+
                 localStorage.setItem('token', response.data.token);
                 localStorage.setItem('isLoggedIn', true);
 
                 // Chuyển hướng đến trang dựa trên Roleid
                 navigate(response.data.redirectUrl);
             } else {
-                setError('Invalid credentials'); // Cập nhật thông báo lỗi nếu không có token
+                setNotify("Login failed", "Invalid credentials", false, true)
+
+                // setError('Invalid credentials'); // Cập nhật thông báo lỗi nếu không có token
             }
         } catch (error) {
             // Kiểm tra lỗi từ phản hồi của server
             if (error.response && error.response.data && error.response.data.message) {
-                setError(error.response.data.message); // Cập nhật thông báo lỗi từ server
+                setNotify("Login failed", error.response.data.message, false, true)
+
+                // setError(error.response.data.message); // Cập nhật thông báo lỗi từ server
             } else {
-                setError('Login failed. Please try again.'); // Thông báo lỗi chung
+                setNotify("Login failed", "Please try again.", false, true)
+
+                // setError('Login failed. Please try again.'); // Thông báo lỗi chung
             }
             console.error('Login failed:', error);
         }
@@ -116,6 +142,7 @@ const Login = () => {
                 </div>
             </div>
             <div className={styles.containerRight}></div>
+            <Notification title={title} messenger={messenger} status={status} isShow={isShow} setIsshow={setIsshow} />
         </div>
     );
 };
