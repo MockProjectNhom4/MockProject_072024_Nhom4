@@ -25,7 +25,8 @@ export default function LayoutDefault() {
       <header className="absolute top-0">
         <Navbar color={color} />
       </header>
-      <main style={{ minHeight: "88vh" }}>
+      <main >
+      {/* style={{ minHeight: "88vh" }} */}
         <Outlet />
       </main>
       <footer>

@@ -23,6 +23,7 @@ import {
   FEEDBACK,
   BODYGUARD_TIME_KEEPING_PATH,
   BODYGUARD_DL_TIME_KEEPING_PATH,
+  PROFILE_PATH,
 } from "./contants/routers";
 
 import NotFound from "./pages/error/NotFound";
@@ -51,6 +52,7 @@ import WorkingSchedule from "./pages/bodyguard/children/workingSchedule/WorkingS
 import TrainingSchedule from "./pages/bodyguard/children/trainingSchedule/TrainingSchedule";
 import TimeKeeping from "./pages/bodyguard/children/timeKeeping/timeKeeping";
 import DetailTimeKeeping from "./pages/bodyguard/children/timeKeeping/detailTimeKeep/DetailTimeKeep";
+import UserProfile from "./pages/client/children/profile/Profile";
 // const router = createBrowserRouter([
 // >>>>>>> c0e129fd8d3848b8adeb09d9a54b6278d1bb5b9f
 
@@ -124,6 +126,10 @@ const router = createBrowserRouter([
       {
         path: FEEDBACK,
         element: <Feedback/>,
+      },
+      {
+        path: PROFILE_PATH,
+        element: <UserProfile/>,
       }
     ],
     errorElement: <NotFound />,

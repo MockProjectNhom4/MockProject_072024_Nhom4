@@ -44,6 +44,7 @@ const Login = () => {
             return;
         }
         try {
+            console.log('try');
             const response = await axios.post('https://intern-server-8n7t.onrender.com/api/login', { email, PASSWORD });
             console.log(response);
 
@@ -65,6 +66,7 @@ const Login = () => {
                 // setError('Invalid credentials'); // Cập nhật thông báo lỗi nếu không có token
             }
         } catch (error) {
+            console.log(error);
             // Kiểm tra lỗi từ phản hồi của server
             if (error.response && error.response.data && error.response.data.message) {
                 setNotify("Login failed", error.response.data.message, false, true)

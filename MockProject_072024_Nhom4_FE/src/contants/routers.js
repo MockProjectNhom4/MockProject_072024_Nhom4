@@ -15,6 +15,7 @@ export const REQUEST_LIST_PATH = "/request/list";
 export const ADMIN_FEEDBACK_PATH = "/admin/feedback";
 export const CONTACT = "/contact";
 export const FEEDBACK = "/feedback";
+export const PROFILE_PATH = "/profile"
 export const SERVICE_PATH = "/service";
 export const SERVICE_DETAIL_PATH = "service/:slug";
 

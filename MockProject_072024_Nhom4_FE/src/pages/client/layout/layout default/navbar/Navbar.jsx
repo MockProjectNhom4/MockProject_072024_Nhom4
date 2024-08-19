@@ -7,7 +7,8 @@ import {
   SIGNIN_PATH,
   SERVICE_PATH,
   FEEDBACK,
-  HISTORY_PATH
+  HISTORY_PATH,
+  PROFILE_PATH
 } from "../../../../../contants/routers";
 import { useState } from "react";
 import useClickOutside from "../../../../../hooks/useClickOutside";
@@ -105,7 +106,7 @@ export default function Navbar({ color }) {
                 className={`${style.profileActCollapse} ${activeCollapse === "profile" ? style.active : ""
                   }`}
               >
-                <li>Profile</li>
+                <li onClick={() => handleNavigation(PROFILE_PATH)}>Profile</li>
                 <li onClick={handleClearState}>Log Out</li>
               </ul>
 
