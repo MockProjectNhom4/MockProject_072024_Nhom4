@@ -24,7 +24,7 @@ const Signup = () => {
                     <div className={styles.labelBot}>
                         <div className={styles.containerText}>
                             <h2>
-                                Welcome👋
+                                Welcsome👋
                             </h2>
                             
 

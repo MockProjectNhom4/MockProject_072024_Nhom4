@@ -70,3 +70,6 @@ button {
 .col-l-12 {
   width: calc((100% / 12) * 12);
 }
+ span{
+  /* margin: 0 !important; */
+ }
