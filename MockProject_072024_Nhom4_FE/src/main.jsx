@@ -20,7 +20,9 @@ import {
   BODYGUARD_TRAINING_SCHEDULE_PATH,
   REQUEST_PATH, 
   REQUEST_LIST_PATH,
-  FEEDBACK
+  FEEDBACK,
+  BODYGUARD_TIME_KEEPING_PATH,
+  BODYGUARD_DL_TIME_KEEPING_PATH,
 } from "./contants/routers";
 
 import NotFound from "./pages/error/NotFound";
@@ -47,6 +49,8 @@ import RequestList from "./pages/client/children/request/list/Requestlist";
 // =======
 import WorkingSchedule from "./pages/bodyguard/children/workingSchedule/WorkingSchedule";
 import TrainingSchedule from "./pages/bodyguard/children/trainingSchedule/TrainingSchedule";
+import TimeKeeping from "./pages/bodyguard/children/timeKeeping/timeKeeping";
+import DetailTimeKeeping from "./pages/bodyguard/children/timeKeeping/detailTimeKeep/DetailTimeKeep";
 // const router = createBrowserRouter([
 // >>>>>>> c0e129fd8d3848b8adeb09d9a54b6278d1bb5b9f
 
@@ -73,11 +77,20 @@ const router = createBrowserRouter([
         element: <Profile />,
       },
       {
-        path:BODYGUARD_WORKING_SCHEDULE_PATH,
+        path: BODYGUARD_WORKING_SCHEDULE_PATH,
         element: <WorkingSchedule/>
-      }, {
-        path:BODYGUARD_TRAINING_SCHEDULE_PATH,
+      }, 
+      {
+        path: BODYGUARD_TRAINING_SCHEDULE_PATH,
         element: <TrainingSchedule/>
+      },{
+
+        path: BODYGUARD_TIME_KEEPING_PATH,
+        element: <TimeKeeping/>
+      },
+      {
+        path: BODYGUARD_DL_TIME_KEEPING_PATH,
+        element: <DetailTimeKeeping/>
       }
     ],
     errorElement: <NotFound />,
