@@ -16,7 +16,6 @@ class Sysdiagrams(models.Model):
     definition = models.BinaryField(blank=True, null=True)
 
     class Meta:
-        managed = False
         db_table = 'sysdiagrams'
         unique_together = (('principal_id', 'name'),)
 
@@ -31,7 +30,6 @@ class TblPayment(models.Model):
     deleted = models.BooleanField(db_column='Deleted', blank=True, null=True)  # Field name made lowercase.
 
     class Meta:
-        managed = False
         db_table = 'tbl_Payment'
 
 
@@ -45,7 +43,6 @@ class TblBackgound(models.Model):
     deleted = models.BooleanField(db_column='Deleted', blank=True, null=True)  # Field name made lowercase.
 
     class Meta:
-        managed = False
         db_table = 'tbl_backgound'
 
 
@@ -63,7 +60,6 @@ class TblBodyguard(models.Model):
     deleted = models.BooleanField(db_column='Deleted', blank=True, null=True)  # Field name made lowercase.
 
     class Meta:
-        managed = False
         db_table = 'tbl_bodyguard'
 
 
@@ -77,7 +73,6 @@ class TblBodyguardEquipment(models.Model):
     deleted = models.BooleanField(db_column='Deleted', blank=True, null=True)  # Field name made lowercase.
 
     class Meta:
-        managed = False
         db_table = 'tbl_bodyguard_equipment'
 
 
@@ -91,7 +86,6 @@ class TblCertificate(models.Model):
     deleted = models.BooleanField(db_column='Deleted', blank=True, null=True)  # Field name made lowercase.
 
     class Meta:
-        managed = False
         db_table = 'tbl_certificate'
 
 
@@ -101,7 +95,6 @@ class TblCertificateBodyguard(models.Model):
     deleted = models.BooleanField(db_column='Deleted', blank=True, null=True)  # Field name made lowercase.
 
     class Meta:
-        managed = False
         db_table = 'tbl_certificate_bodyguard'
         unique_together = (('guardid', 'certificateid'),)
 
@@ -121,7 +114,6 @@ class TblContract(models.Model):
     deleted = models.BooleanField(db_column='Deleted', blank=True, null=True)  # Field name made lowercase.
 
     class Meta:
-        managed = False
         db_table = 'tbl_contract'
 
 
@@ -133,7 +125,6 @@ class TblContractDetail(models.Model):
     deleted = models.BooleanField(db_column='Deleted', blank=True, null=True)  # Field name made lowercase.
 
     class Meta:
-        managed = False
         db_table = 'tbl_contract_detail'
 
 
@@ -148,7 +139,6 @@ class TblCustomer(models.Model):
     deleted = models.BooleanField(db_column='Deleted', blank=True, null=True)  # Field name made lowercase.
 
     class Meta:
-        managed = False
         db_table = 'tbl_customer'
 
 
@@ -162,7 +152,6 @@ class TblDayoff(models.Model):
     deleted = models.BooleanField(db_column='Deleted', blank=True, null=True)  # Field name made lowercase.
 
     class Meta:
-        managed = False
         db_table = 'tbl_dayoff'
 
 
@@ -175,7 +164,6 @@ class TblEmergencyContact(models.Model):
     deleted = models.BooleanField(db_column='Deleted', blank=True, null=True)  # Field name made lowercase.
 
     class Meta:
-        managed = False
         db_table = 'tbl_emergency_contact'
 
 
@@ -187,7 +175,6 @@ class TblEquipment(models.Model):
     deleted = models.BooleanField(db_column='Deleted', blank=True, null=True)  # Field name made lowercase.
 
     class Meta:
-        managed = False
         db_table = 'tbl_equipment'
 
 
@@ -201,7 +188,6 @@ class TblFeedback(models.Model):
     deleted = models.BooleanField(db_column='Deleted', blank=True, null=True)  # Field name made lowercase.
 
     class Meta:
-        managed = False
         db_table = 'tbl_feedback'
 
 
@@ -214,7 +200,6 @@ class TblLectures(models.Model):
     deleted = models.BooleanField(db_column='Deleted', blank=True, null=True)  # Field name made lowercase.
 
     class Meta:
-        managed = False
         db_table = 'tbl_lectures'
 
 
@@ -228,7 +213,6 @@ class TblPaymentTransaction(models.Model):
     deleted = models.BooleanField(db_column='Deleted', blank=True, null=True)  # Field name made lowercase.
 
     class Meta:
-        managed = False
         db_table = 'tbl_payment_transaction'
 
 
@@ -247,7 +231,6 @@ class TblRegistration(models.Model):
     deleted = models.BooleanField(db_column='Deleted', blank=True, null=True)  # Field name made lowercase.
 
     class Meta:
-        managed = False
         db_table = 'tbl_registration'
 
 
@@ -256,7 +239,6 @@ class TblRole(models.Model):
     name = models.CharField(db_column='Name', max_length=255, blank=True, null=True)  # Field name made lowercase.
 
     class Meta:
-        managed = False
         db_table = 'tbl_role'
 
 
@@ -268,7 +250,6 @@ class TblService(models.Model):
     deleted = models.BooleanField(db_column='Deleted', blank=True, null=True)  # Field name made lowercase.
 
     class Meta:
-        managed = False
         db_table = 'tbl_service'
 
 
@@ -282,7 +263,6 @@ class TblTimekeeping(models.Model):
     deleted = models.BooleanField(db_column='Deleted', blank=True, null=True)  # Field name made lowercase.
 
     class Meta:
-        managed = False
         db_table = 'tbl_timekeeping'
 
 
@@ -297,7 +277,6 @@ class TblTraining(models.Model):
     deleted = models.BooleanField(db_column='Deleted', blank=True, null=True)  # Field name made lowercase.
 
     class Meta:
-        managed = False
         db_table = 'tbl_training'
 
 
@@ -307,7 +286,6 @@ class TblTrainingBodyguard(models.Model):
     deleted = models.BooleanField(db_column='Deleted', blank=True, null=True)  # Field name made lowercase.
 
     class Meta:
-        managed = False
         db_table = 'tbl_training_bodyguard'
         unique_together = (('trainingid', 'bodyguardid'),)
 
@@ -322,7 +300,6 @@ class TblUser(models.Model):
     deleted = models.BooleanField(db_column='Deleted', blank=True, null=True)  # Field name made lowercase.
 
     class Meta:
-        managed = False
         db_table = 'tbl_user'
 
 
@@ -338,5 +315,4 @@ class TblWorkSchedule(models.Model):
     deleted = models.BooleanField(db_column='Deleted', blank=True, null=True)  # Field name made lowercase.
 
     class Meta:
-        managed = False
         db_table = 'tbl_work_schedule'

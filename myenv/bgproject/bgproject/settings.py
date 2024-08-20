@@ -81,18 +81,37 @@ WSGI_APPLICATION = 'bgproject.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'mssql',
-        'NAME': 'newbodyguardDB',
-        'USER': 'SQLAdmin',
-        'PASSWORD': '12345678@a',
-        'HOST': 'mockprojecsqlserver.database.windows.net',
-        'PORT': '',
-        'OPTIONS': {
-            'driver': 'ODBC Driver 17 for SQL Server',
-            'Trusted_Connection':'yes',
-        },
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'bodyguardDB',
+        'USER': 'root',
+        'PASSWORD': '201853591',
+        'HOST': '127.0.0.1',
+        'PORT': '3306',
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'mssql',
+#         'NAME': 'newbodyguardDB',
+#         'USER': 'SQLAdmin',
+#         'PASSWORD': '12345678@a',
+#         'HOST': 'mockprojecsqlserver.database.windows.net',
+#         'PORT': '',
+#         'OPTIONS': {
+#             'driver': 'ODBC Driver 17 for SQL Server',
+#             'Trusted_Connection':'yes',
+#         },
+#     }
+# }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
 
 REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
