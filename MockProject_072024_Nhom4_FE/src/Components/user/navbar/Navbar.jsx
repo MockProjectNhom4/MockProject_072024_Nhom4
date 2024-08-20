@@ -8,10 +8,10 @@ import {
   SERVICE_PATH,
   FEEDBACK,
   HISTORY_PATH,
-  PROFILE_PATH
-} from "../../../../../contants/routers";
+  PROFILE_PATH,
+} from "../../../contants/routers";
 import { useState } from "react";
-import useClickOutside from "../../../../../hooks/useClickOutside";
+import useClickOutside from "../../../hooks/useClickOutside";
 
 const NAV_ACTION_ICONS = [
   { alt: "notification", src: "icon/Bell_fill.png" },
@@ -20,14 +20,13 @@ const NAV_ACTION_ICONS = [
 ];
 
 export default function NavbarAd({ color }) {
-
   const navigate = useNavigate();
   const location = useLocation();
   const [activeCollapse, setActiveCollapse] = useState(null);
   // const { status } = location.state || {};
   const moreRef = useClickOutside(() => setActiveCollapse(null));
   const profileRef = useClickOutside(() => setActiveCollapse(null));
-  const status = localStorage.getItem('isLoggedIn')
+  const status = localStorage.getItem("isLoggedIn");
   const handleNavigation = (url) => {
     navigate(url);
   };
@@ -41,8 +40,8 @@ export default function NavbarAd({ color }) {
   };
 
   const handleClearState = () => {
-    localStorage.setItem('isLoggedIn', false);
-    handleNavigation(SIGNIN_PATH)
+    localStorage.setItem("isLoggedIn", false);
+    handleNavigation(SIGNIN_PATH);
   };
 
   return (
@@ -103,8 +102,9 @@ export default function NavbarAd({ color }) {
               {/* collapse profile */}
               <ul
                 ref={profileRef}
-                className={`${style.profileActCollapse} ${activeCollapse === "profile" ? style.active : ""
-                  }`}
+                className={`${style.profileActCollapse} ${
+                  activeCollapse === "profile" ? style.active : ""
+                }`}
               >
                 <li onClick={() => handleNavigation(PROFILE_PATH)}>Profile</li>
                 <li onClick={handleClearState}>Log Out</li>
@@ -113,12 +113,13 @@ export default function NavbarAd({ color }) {
               {/* collapse more */}
               <ul
                 ref={moreRef}
-                className={`${style.moreActCollapse} ${activeCollapse === "more" ? style.active : ""
-                  }`}
+                className={`${style.moreActCollapse} ${
+                  activeCollapse === "more" ? style.active : ""
+                }`}
               >
                 <li>Requests</li>
                 <li>Contracts</li>
-                <li onClick={() => handleNavigation(HISTORY_PATH)} >Historys</li>
+                <li onClick={() => handleNavigation(HISTORY_PATH)}>Historys</li>
                 <li onClick={() => handleNavigation(FEEDBACK)}>Feedbacks</li>
               </ul>
             </li>

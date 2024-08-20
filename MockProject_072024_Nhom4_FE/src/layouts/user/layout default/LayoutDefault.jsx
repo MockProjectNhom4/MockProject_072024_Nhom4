@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import Footer from "./footer/Footer";
-import Navbar from "./navbar/Navbar";
+import Footer from "../../../Components/user/footer/Footer";
+import Navbar from "../../../Components/user/navbar/Navbar";
 import { Outlet } from "react-router-dom";
 export default function LayoutDefault() {
   const [color, setColor] = useState("");
@@ -25,8 +25,8 @@ export default function LayoutDefault() {
       <header className="absolute top-0">
         <Navbar color={color} />
       </header>
-      <main >
-      {/* style={{ minHeight: "88vh" }} */}
+      <main>
+        {/* style={{ minHeight: "88vh" }} */}
         <Outlet />
       </main>
       <footer>

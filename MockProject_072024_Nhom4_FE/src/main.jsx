@@ -18,7 +18,7 @@ import {
   BODYGUARD_PROFILE_PATH,
   BODYGUARD_WORKING_SCHEDULE_PATH,
   BODYGUARD_TRAINING_SCHEDULE_PATH,
-  REQUEST_PATH, 
+  REQUEST_PATH,
   REQUEST_LIST_PATH,
   FEEDBACK,
   BODYGUARD_TIME_KEEPING_PATH,
@@ -30,24 +30,24 @@ import {
 } from "./contants/routers";
 
 import NotFound from "./pages/error/NotFound";
-import Home from "./pages/client/children/home/Home";
-import HistoryPage from "./pages/client/HistoryPage";
-import LayoutDefault from "./pages/client/layout/layout default/LayoutDefault";
-import News from "./pages/client/children/news/News";
+import Home from "./pages/user/children/home/Home";
+import HistoryPage from "./pages/user/HistoryPage";
+import LayoutDefault from "./layouts/user/layout default/LayoutDefault";
+import News from "./pages/user/children/news/News";
 
-import DetailNews from "./pages/client/children/detail news/DetailNews";
-import Feedback from "./pages/client/children/feedback/Feedback";
-import Contact from "./pages/client/children/contact/Contact";
+import DetailNews from "./pages/user/children/detail news/DetailNews";
+import Feedback from "./pages/user/children/feedback/Feedback";
+import Contact from "./pages/user/children/contact/Contact";
 import Profile from "./pages/bodyguard/children/profile/Profile";
-import LayoutDefaultBodyGuard from "./pages/bodyguard/layout/LayoutDefaultBodyGuard";
-import Signup from "./pages/signup/Signup";
-import LoginBodyGuard from "./pages/bodyGuard_v1/Login/Login";
-import Service from "./pages/client/children/service/Service";
-import ServiceDetail from "./pages/client/children/service/serviceDetail/ServiceDetail";
-import Login from "./pages/login/loginform";
-import Request from "./pages/client/children/request/form/Request";
+import LayoutDefaultBodyGuard from "./layouts/body guard/layout default/LayoutDefaultBodyGuard";
+import Signup from "./pages/user/signup/Signup";
+import LoginBodyGuard from "./pages/bodyguard/login/Login";
+import Service from "./pages/user/children/service/Service";
+import ServiceDetail from "./pages/user/children/service/serviceDetail/ServiceDetail";
+import Login from "./pages/user/login/loginform";
+import Request from "./pages/user/children/request/form/Request";
 // import Feedback from "./pages/client/children/feedback/Feedback";
-import RequestList from "./pages/client/children/request/list/Requestlist";
+import RequestList from "./pages/user/children/request/list/Requestlist";
 // <<<<<<< HEAD
 
 // =======
@@ -55,13 +55,12 @@ import WorkingSchedule from "./pages/bodyguard/children/workingSchedule/WorkingS
 import TrainingSchedule from "./pages/bodyguard/children/trainingSchedule/TrainingSchedule";
 import TimeKeeping from "./pages/bodyguard/children/timeKeeping/timeKeeping";
 import DetailTimeKeeping from "./pages/bodyguard/children/timeKeeping/detailTimeKeep/DetailTimeKeep";
-import UserProfile from "./pages/client/children/profile/Profile";
-import AdminLayout from "./pages/Admin/layout/LayoutAdminPage";
+import UserProfile from "./pages/user/children/profile/Profile";
+import AdminLayout from "./layouts/admin/layout default/LayoutAdminPage";
 import Content from "./pages/Admin/children/AccountManage/AccountManage";
 import Contract from "./pages/Admin/children/Contract/Contract";
 // const router = createBrowserRouter([
 // >>>>>>> c0e129fd8d3848b8adeb09d9a54b6278d1bb5b9f
-
 
 const router = createBrowserRouter([
   // UI user into here
@@ -86,20 +85,20 @@ const router = createBrowserRouter([
       },
       {
         path: BODYGUARD_WORKING_SCHEDULE_PATH,
-        element: <WorkingSchedule/>
-      }, 
+        element: <WorkingSchedule />,
+      },
       {
         path: BODYGUARD_TRAINING_SCHEDULE_PATH,
-        element: <TrainingSchedule/>
-      },{
-
+        element: <TrainingSchedule />,
+      },
+      {
         path: BODYGUARD_TIME_KEEPING_PATH,
-        element: <TimeKeeping/>
+        element: <TimeKeeping />,
       },
       {
         path: BODYGUARD_DL_TIME_KEEPING_PATH,
-        element: <DetailTimeKeeping/>
-      }
+        element: <DetailTimeKeeping />,
+      },
     ],
     errorElement: <NotFound />,
   },
@@ -131,12 +130,12 @@ const router = createBrowserRouter([
       },
       {
         path: FEEDBACK,
-        element: <Feedback/>,
+        element: <Feedback />,
       },
       {
         path: PROFILE_PATH,
-        element: <UserProfile/>,
-      }
+        element: <UserProfile />,
+      },
     ],
     errorElement: <NotFound />,
   },
@@ -166,7 +165,7 @@ const router = createBrowserRouter([
     errorElement: <NotFound />,
   },
 
-      {
+  {
     path: REQUEST_PATH,
     element: <LayoutDefault />,
     children: [
@@ -177,7 +176,7 @@ const router = createBrowserRouter([
     ],
     errorElement: <NotFound />,
   },
-    
+
   {
     path: REQUEST_LIST_PATH,
     element: <RequestList />,
@@ -196,8 +195,7 @@ const router = createBrowserRouter([
       {
         path: CONTRACT_ADMIN,
         element: <Contract />,
-      }
-     
+      },
     ],
     errorElement: <NotFound />,
   },
