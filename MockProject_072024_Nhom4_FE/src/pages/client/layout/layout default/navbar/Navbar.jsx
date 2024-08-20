@@ -19,7 +19,7 @@ const NAV_ACTION_ICONS = [
   { alt: "menu", src: "icon/menu.png" },
 ];
 
-export default function Navbar({ color }) {
+export default function NavbarAd({ color }) {
 
   const navigate = useNavigate();
   const location = useLocation();

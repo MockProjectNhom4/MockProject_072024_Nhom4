@@ -1,0 +1,21 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #343a40;
+    color: white;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.companyName {
+    font-size: 18px;
+}
+
+.adminName {
+    font-size: 16px;
+}

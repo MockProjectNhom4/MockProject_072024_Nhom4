@@ -11,6 +11,8 @@ const UserProfile = () => {
         accountType: "Premium",
         profilePicture: '../../../profile_pictute.png',
     };
+    const users = localStorage.getItem('token');
+    console.log(users);
 
     return (
         <div className={styles.profileContainer}>

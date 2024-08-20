@@ -24,6 +24,9 @@ import {
   BODYGUARD_TIME_KEEPING_PATH,
   BODYGUARD_DL_TIME_KEEPING_PATH,
   PROFILE_PATH,
+  ADMIN_PATH,
+  ADMIN_ACCOUNT,
+  CONTRACT_ADMIN,
 } from "./contants/routers";
 
 import NotFound from "./pages/error/NotFound";
@@ -53,6 +56,9 @@ import TrainingSchedule from "./pages/bodyguard/children/trainingSchedule/Traini
 import TimeKeeping from "./pages/bodyguard/children/timeKeeping/timeKeeping";
 import DetailTimeKeeping from "./pages/bodyguard/children/timeKeeping/detailTimeKeep/DetailTimeKeep";
 import UserProfile from "./pages/client/children/profile/Profile";
+import AdminLayout from "./pages/Admin/layout/LayoutAdminPage";
+import Content from "./pages/Admin/children/AccountManage/AccountManage";
+import Contract from "./pages/Admin/children/Contract/Contract";
 // const router = createBrowserRouter([
 // >>>>>>> c0e129fd8d3848b8adeb09d9a54b6278d1bb5b9f
 
@@ -178,7 +184,23 @@ const router = createBrowserRouter([
     errorElement: <NotFound />,
   },
 
-
+  //UI Admin
+  {
+    path: ADMIN_PATH,
+    element: <AdminLayout />,
+    children: [
+      {
+        path: ADMIN_ACCOUNT,
+        element: <Content />,
+      },
+      {
+        path: CONTRACT_ADMIN,
+        element: <Contract />,
+      }
+     
+    ],
+    errorElement: <NotFound />,
+  },
   // UI admin anđ staff into here
   // {
   // path: ADMIN_PATH,

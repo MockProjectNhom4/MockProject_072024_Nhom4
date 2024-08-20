@@ -13,6 +13,8 @@ export const REQUEST_LIST_PATH = "/request/list";
 
 
 export const ADMIN_FEEDBACK_PATH = "/admin/feedback";
+export const ADMIN_ACCOUNT = "/admin/manageaccount"
+export const CONTRACT_ADMIN = "/admin/contract"
 export const CONTACT = "/contact";
 export const FEEDBACK = "/feedback";
 export const PROFILE_PATH = "/profile"
