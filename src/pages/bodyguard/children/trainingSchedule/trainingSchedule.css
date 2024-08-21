@@ -1,0 +1,5 @@
+table td:nth-child(7) div {
+    display: flex;
+    flex-direction: row; 
+    min-width: auto;
+}

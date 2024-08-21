@@ -1,0 +1,77 @@
+.addfeedback{
+    max-width: 1000px;
+    width: 100%;
+    height: fit-content;
+    margin: 150px auto;
+    padding: 20px;
+    border: 1px solid black;
+    border-radius: 20px;
+    background-color: rgb(255, 255, 255);
+    position: relative;
+}
+
+.addfeedback .back{
+ width: 40px;
+ height: 40px;
+ position: absolute;
+ top: 25px;
+ right: 30px;
+ cursor: pointer;
+
+}
+
+.addfeedback h1{
+    font-weight: 700;
+    font-size: 40px;
+}
+
+.addfeedback .datafeedback{
+    display: flex;
+    margin: 20px 20px;
+}
+
+.addfeedback .datafeedback p{
+    width: 150px;
+    font-weight: 700;
+    font-size: 20px;
+    margin: 0;
+    line-height: 40px;
+    text-align: right;
+    padding: 0px 40px 0px 0px;
+}
+
+.addfeedback .datafeedback input{
+    flex: 1;
+    height: 40px;
+    padding: 0px 20px;
+    border: 1px solid black;
+    border-radius: 8px;
+    font-size: 20px;    
+}
+
+.addfeedback .datafeedback select{
+    height: 40px;
+    width: 200px;
+    padding: 0px 20px;
+    border: 1px solid black;
+    border-radius: 8px;
+    font-size: 20px;
+}
+
+.addfeedback .datafeedback button{
+    margin: auto;
+    width: 200px;
+    height: 45px;
+    font-size: 30px;
+    font-weight: bold;
+    background-color: #ffa500;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.addfeedback .datafeedback button:hover{
+    background-color: #fab22c;
+
+}
+

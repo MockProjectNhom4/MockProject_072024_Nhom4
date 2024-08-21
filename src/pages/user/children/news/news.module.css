@@ -1,0 +1,102 @@
+:root {
+  --height-card: 400px;
+}
+.news {
+  background-color: #fff4f4;
+  padding: 112px 56px 56px 56px;
+}
+
+.nav {
+  font-size: 2.4rem;
+  color: #ff1e56;
+  font-weight: 700;
+}
+
+.newsHeadline {
+  text-transform: capitalize;
+  font-size: 3.2rem;
+  padding: 16px 0 4px 0;
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.card {
+  width: 24%;
+  height: var(--height-card);
+  box-sizing: border-box;
+  box-shadow: 0 0 1px #000000;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: 0.24s;
+}
+
+.card:hover {
+  box-shadow: 4px 4px 2px hsla(345, 100%, 56%, 0.671);
+}
+
+.cardImage img {
+  width: 100%;
+  height: calc(var(--height-card) - 160px);
+  object-fit: cover;
+  object-position: center;
+}
+
+.cardContent {
+  padding: 8px 16px;
+  height: 112px;
+}
+
+.dateTime,
+.describe {
+  font-size: 1.4rem;
+  overflow-wrap: break-word;
+}
+
+.title {
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 4px 0;
+}
+
+.cardAction {
+  height: 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.cardAction::before {
+  content: "";
+  width: 90%;
+  height: 1px;
+  background-color: #000000;
+  position: absolute;
+}
+
+.actions {
+  width: 90%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.views {
+  display: flex;
+  align-items: center;
+  font-size: 1.6rem;
+}
+
+.btn {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-weight: 900;
+}
