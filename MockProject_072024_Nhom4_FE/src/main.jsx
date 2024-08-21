@@ -25,6 +25,7 @@ import {
   EDITFEEDBACK,
   BODYGUARD_TIME_KEEPING_PATH,
   BODYGUARD_DL_TIME_KEEPING_PATH,
+  BODYGUARD_RATE_PATH,
   PROFILE_PATH,
   ADMIN_PATH,
   ADMIN_ACCOUNT,
@@ -63,6 +64,7 @@ import UserProfile from "./pages/user/children/profile/Profile";
 import AdminLayout from "./layouts/admin/layout default/LayoutAdminPage";
 import Content from "./pages/Admin/children/AccountManage/AccountManage";
 import Contract from "./pages/Admin/children/Contract/Contract";
+import Rate from "./pages/bodyguard/children/rate/Rate";
 // const router = createBrowserRouter([
 // >>>>>>> c0e129fd8d3848b8adeb09d9a54b6278d1bb5b9f
 
@@ -103,6 +105,10 @@ const router = createBrowserRouter([
         path: BODYGUARD_DL_TIME_KEEPING_PATH,
         element: <DetailTimeKeeping />,
       },
+      {
+        path:BODYGUARD_RATE_PATH,
+        element:<Rate/>,
+      }
     ],
     errorElement: <NotFound />,
   },
