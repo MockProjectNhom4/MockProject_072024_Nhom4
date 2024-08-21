@@ -1,10 +1,8 @@
-// src/components/Login/Login.jsx
 import React, { useState } from "react";
 import styles from "./Login.module.css";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { SIGNUP_PATH } from "../../../contants/routers";
-// import Notification from '../library/notification';
 import Notification from "../library/notification";
 
 const backgroundImageUrl = "../../BackLogin.png";
@@ -13,9 +11,9 @@ const logoGg = "../../../google_PNG19635.png";
 
 const Login = () => {
   const navigate = useNavigate();
-  const [email, setEmail] = useState(""); // Đổi USER_NAME thành email
+  const [login, setLogin] = useState(""); // Đổi email thành login
   const [PASSWORD, setPassword] = useState("");
-  const [error, setError] = useState(""); // Trạng thái để lưu thông báo lỗi
+  const [error, setError] = useState("");
   const [isShow, setIsshow] = useState(false);
   const [title, setTitle] = useState("");
   const [messenger, setMessenger] = useState("");
@@ -24,6 +22,7 @@ const Login = () => {
   const handleNavigation = (url) => {
     navigate(url);
   };
+  
   const setNotify = (title, message, status, isShow) => {
     setTitle(title);
     setMessenger(message);
@@ -33,25 +32,22 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(email, PASSWORD);
+    console.log(login, PASSWORD);
     setError(""); // Reset thông báo lỗi trước khi gửi yêu cầu
-    if (!email || !PASSWORD) {
+    if (!login || !PASSWORD) {
       setNotify(
         "Login failed!",
-        "Please enter both email and password.",
+        "Please enter both login and password.",
         false,
         true
       );
-      // setError('Please enter both email and password.'); // Thông báo nếu thiếu thông tin
       return;
     }
     try {
-      console.log("try");
       const response = await axios.post(
         "https://intern-server-8n7t.onrender.com/api/login",
-        { email, PASSWORD }
+        { login, PASSWORD } 
       );
-      console.log(response);
 
       if (response.data.token) {
         setNotify(
@@ -60,11 +56,6 @@ const Login = () => {
           true,
           true
         );
-        // Lưu token vào localStorage
-        // setTitle("Đăng nhập thành công")
-        // setMessenger("Vui lòng chờ vài giây...")
-        // setStatus(true);
-
         localStorage.setItem("token", response.data.token);
         localStorage.setItem("isLoggedIn", true);
 
@@ -72,24 +63,17 @@ const Login = () => {
         navigate(response.data.redirectUrl);
       } else {
         setNotify("Login failed", "Invalid credentials", false, true);
-
-        // setError('Invalid credentials'); // Cập nhật thông báo lỗi nếu không có token
       }
     } catch (error) {
       console.log(error);
-      // Kiểm tra lỗi từ phản hồi của server
       if (
         error.response &&
         error.response.data &&
         error.response.data.message
       ) {
         setNotify("Login failed", error.response.data.message, false, true);
-
-        // setError(error.response.data.message); // Cập nhật thông báo lỗi từ server
       } else {
         setNotify("Login failed", "Please try again.", false, true);
-
-        // setError('Login failed. Please try again.'); // Thông báo lỗi chung
       }
       console.error("Login failed:", error);
     }
@@ -119,13 +103,13 @@ const Login = () => {
             <div className={styles.containerInput}>
               <form onSubmit={handleSubmit}>
                 <div className={styles.formField}>
-                  <span>Email</span>
+                  <span>User name</span>
                   <input
-                    type="email" // Thay đổi loại trường nhập
-                    placeholder="Email"
+                    type="text" // Thay đổi loại trường nhập nếu cần
+                    placeholder="User name"
                     className={styles.inputField}
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
+                    value={login}
+                    onChange={(e) => setLogin(e.target.value)}
                   />
                 </div>
                 <div className={styles.formField}>
@@ -147,8 +131,7 @@ const Login = () => {
                   Sign in
                 </button>
               </form>
-              {error && <div className={styles.errorMessage}>{error}</div>}{" "}
-              {/* Hiển thị thông báo lỗi */}
+              {error && <div className={styles.errorMessage}>{error}</div>} 
               <div className={styles.loginOthers}>
                 <div className={styles.or}>
                   <span />
