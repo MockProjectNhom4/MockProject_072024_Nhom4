@@ -27,6 +27,8 @@ import {
   ADMIN_PATH,
   ADMIN_ACCOUNT,
   CONTRACT_ADMIN,
+  STAFF_PATH,
+  STAFF_EQUIPMENT_PATH,
 } from "./contants/routers";
 
 import NotFound from "./pages/error/NotFound";
@@ -59,6 +61,7 @@ import UserProfile from "./pages/user/children/profile/Profile";
 import AdminLayout from "./layouts/admin/layout default/LayoutAdminPage";
 import Content from "./pages/Admin/children/AccountManage/AccountManage";
 import Contract from "./pages/Admin/children/Contract/Contract";
+import Equipment from "./pages/Admin/children/equipment/Equipment";
 // const router = createBrowserRouter([
 // >>>>>>> c0e129fd8d3848b8adeb09d9a54b6278d1bb5b9f
 
@@ -199,40 +202,28 @@ const router = createBrowserRouter([
     ],
     errorElement: <NotFound />,
   },
-  // UI admin anđ staff into here
-  // {
-  // path: ADMIN_PATH,
-  // element: <AdminPage />,
-  // children: [
-  //   // {
-  //   //   path: ADMIN_PERSONAL_INFOR_PATH,
-  //   //   element: <PersonalInfor/>
-  //   // },
-  //   {
-  //     path: ADMIN_USER_LIST_PATH,
-  //     element: <ErrorPage/>
-  //   },]
-  // }
   {
     path: ADMIN_FEEDBACK_PATH,
     element: <Feedback />,
     errorElement: <NotFound />,
   },
-
-  // UI admin anđ staff into here
-  // {
-  // path: ADMIN_STAFF,
-  // element: <AdminPage />,
-  // children: [
-  //   // {
-  //   //   path: ADMIN_PERSONAL_INFOR_PATH,
-  //   //   element: <PersonalInfor/>
-  //   // },
-  //   {
-  //     path: ADMIN_USER_LIST_PATH,
-  //     element: <ErrorPage/>
-  //   },]
-  // }
+  // UI staff into here
+  {
+    path: STAFF_PATH,
+    element: <AdminLayout />,
+    children: [
+      {
+        path: STAFF_EQUIPMENT_PATH,
+        element: <Equipment />,
+      },
+    ],
+    errorElement: <NotFound />,
+  },
+  {
+    path: ADMIN_FEEDBACK_PATH,
+    element: <Feedback />,
+    errorElement: <NotFound />,
+  },
   // /////////////////////////////////////VIEWS BODYGUARD //////////
   {
     path: "/bodyguard/auth/login",
