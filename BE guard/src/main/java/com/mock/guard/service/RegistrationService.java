@@ -1,6 +1,12 @@
 package com.mock.guard.service;
 
+import com.mock.guard.dto.request.RegistrationCreateRequest;
+import com.mock.guard.dto.request.RegistrationUpdateRequest;
+import com.mock.guard.dto.response.RegistrationResponse;
 import com.mock.guard.entity.Registration;
+import com.mock.guard.exception.AppException;
+import com.mock.guard.exception.ErrorCode;
+import com.mock.guard.mapper.RegistrationMapper;
 import com.mock.guard.repository.RegistrationRepository;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
@@ -16,40 +22,55 @@ import java.util.List;
 @Slf4j
 public class RegistrationService {
     RegistrationRepository registrationRepository;
-
+    RegistrationMapper mapper;
     // get
-    public List<Registration> getRegistration() {
-        return registrationRepository.findAll();
+    public List<RegistrationResponse> getRegistrations() {
+
+
+        return registrationRepository.findAll().stream().map(mapper::toRegistrationResponse).toList();
     }
 
     // get by id
-    public Registration getRegistrationById(int id) {
-        return registrationRepository.findById(id).orElse(null);
+    public RegistrationResponse getRegistrationById(int id) {
+
+        return mapper.toRegistrationResponse(registrationRepository.findById(id)
+                .orElseThrow(() -> new AppException(ErrorCode.ITEM_NOT_EXISTED)));
+
     }
 
     //create
-    public Registration createRegistration(Registration registration) {
-        return registrationRepository.save(registration);
+    public RegistrationResponse createRegistration(RegistrationCreateRequest request) {
+
+//        if (registrationRepository.existsById(request.getId()))
+//            throw new AppException(ErrorCode.ITEM_EXISTED);
+
+
+        Registration user = mapper.toRegistration(request);
+
+        return mapper.toRegistrationResponse(registrationRepository.save(user));
     }
 
     // update
-    public Registration updateRegistration(int id, Registration registration) {
-        Registration existingRegistration = getRegistrationById(id);
-        if (existingRegistration == null) {
-            return null;
-        }
+    public RegistrationResponse updateRegistration(Integer id, RegistrationUpdateRequest request) {
 
-        return registrationRepository.save(registration);
+        Registration registration = registrationRepository.findById(id)
+                .orElseThrow(() -> new AppException(ErrorCode.ITEM_NOT_EXISTED));
+
+        mapper.updatetoRegistration(registration, request);
+
+        return mapper.toRegistrationResponse(registrationRepository.save(registration));
+
     }
 
     // delete
     public boolean deleteRegistration(int id) {
-        Registration existingRegistration = getRegistrationById(id);
-        if (existingRegistration == null) {
-            return false;
-        }
+
+        registrationRepository.findById(id)
+                .orElseThrow(() -> new AppException(ErrorCode.ITEM_NOT_EXISTED));
+
         registrationRepository.deleteById(id);
         return true;
-
     }
+
+
 }

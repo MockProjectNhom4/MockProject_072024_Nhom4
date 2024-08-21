@@ -21,33 +21,36 @@ public class Registration {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name = "SerivceID")
+    @Column(name = "serivceid")
     private Integer serviceId;
 
-    @Column(name = "CustomerID")
+    @Column(name = "customerid")
     private Integer customerId;
 
-    @Column(name = "Requirement")
+    @Column(name = "requirement")
     private String requirement;
 
-    @Column(name = "man_quantity")
+    @Column(name = "manquantity")
     private Integer manQuantity;
 
-    @Column(name = "woman_quantity")
+    @Column(name = "womanquantity")
     private Integer womanQuantity;
 
-    @Column(name = "Status")
+    @Column(name = "status", length = 100)
     private String status;
 
-    @Column(name = "Location")
+    @Column(name = "location")
     private String location;
 
-    @Column(name = "Interview_time")
+    @Column(name = "interview_time")
     private Timestamp interviewTime;
 
-    @Column(name = "Interview_Location")
+    @Column(name = "interview_Location")
     private String interviewLocation;
 
-    @Column(name = "create_at")
+    @Column(name = "createat")
     private Timestamp createAt;
+
+    @Column(name= "deleted")
+    private  Boolean deleted;
 }

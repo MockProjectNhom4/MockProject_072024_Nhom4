@@ -1,6 +1,9 @@
 package com.mock.guard.controller;
 
-import com.mock.guard.entity.Registration;
+import com.mock.guard.dto.request.RegistrationCreateRequest;
+import com.mock.guard.dto.request.RegistrationUpdateRequest;
+import com.mock.guard.dto.response.ApiResponse;
+import com.mock.guard.dto.response.RegistrationResponse;
 import com.mock.guard.service.RegistrationService;
 import jakarta.validation.Valid;
 import lombok.AccessLevel;
@@ -8,8 +11,6 @@ import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 
@@ -32,45 +33,45 @@ public class RegistrationController {
 
     //get all registration
     @GetMapping
-    public List<Registration> getAll() {
-        return service.getRegistration();
+    public ApiResponse<List<RegistrationResponse>> getAll() {
 
+        return ApiResponse.<List<RegistrationResponse>>builder().result(service.getRegistrations()).build();
     }
 
     // get by id
     @GetMapping("/{id}")
-    public ResponseEntity<Registration> get(@PathVariable(name = "id") Integer id) {
-        Registration item = service.getRegistrationById(id);
-        if (item == null) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
-        return new ResponseEntity<>(item, HttpStatus.OK);
+    public ApiResponse<RegistrationResponse> get(@PathVariable(name = "id") Integer id) {
+        return ApiResponse.<RegistrationResponse>builder().result(service.getRegistrationById(id)).build();
+
     }
 
     // insert new
     @PostMapping
-    public ResponseEntity<Registration> create(@RequestBody @Valid Registration item) {
+    public ApiResponse<RegistrationResponse> create(@RequestBody @Valid RegistrationCreateRequest request) {
 
-        return new ResponseEntity<>(service.createRegistration(item), HttpStatus.CREATED);
+        return ApiResponse.<RegistrationResponse>builder().result(service.createRegistration(request)).build();
     }
 
     // update
     @PutMapping("/{id}")
-    public ResponseEntity<Registration> update(@PathVariable(name = "id") Integer id, @RequestBody Registration item) {
-        Registration itemUpdate = service.updateRegistration(id, item);
-        if (itemUpdate == null) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
-        return new ResponseEntity<>(itemUpdate, HttpStatus.OK);
+    public ApiResponse<RegistrationResponse> update(@PathVariable(name = "id") Integer id, @RequestBody RegistrationUpdateRequest request) {
+
+        return ApiResponse.<RegistrationResponse>builder().result(service.updateRegistration(id, request)).build();
     }
 
     // delete
     @DeleteMapping("/{id}")
-    public ResponseEntity<Registration> delete(@PathVariable Integer id) {
+    public ApiResponse<String> delete(@PathVariable Integer id) {
+
         if(!service.deleteRegistration(id)){
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            return ApiResponse.<String>builder().result("Delete failed").build();
         }
-        return new ResponseEntity<>(HttpStatus.OK);
+        return ApiResponse.<String>builder().result("Registration has been deleted").build();
     }
+    // pagination, sort, search, filter ...
+    // 2: result: request, response
+    // 3: document api integrated
+    // 1: customize http, message response,
+    // 4: validation: check type, min, max, space, ...
 
 }
