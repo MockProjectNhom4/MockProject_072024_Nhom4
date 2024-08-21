@@ -5,6 +5,9 @@ export default function EditFeedback() {
     <>
      {/* header */}
         <div className={style.addfeedback}>
+            <div className={style.back}>
+                <a href="./feedback"><img src="../icon/feedback_back.png" alt="" /></a>
+            </div>
             <h1>Edit FeedBack</h1>
             <div className={style.datafeedback}>
                 <p>Id Contract</p>
