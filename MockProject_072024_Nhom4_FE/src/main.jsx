@@ -8,7 +8,7 @@ import {
   NEWS_PATH,
   HISTORY_PATH,
   DETAIL_NEWS_PATH,
-  ADMIN_FEEDBACK_PATH,
+
   CONTACT,
   SERVICE_PATH,
   SERVICE_DETAIL_PATH,
@@ -21,6 +21,8 @@ import {
   REQUEST_PATH,
   REQUEST_LIST_PATH,
   FEEDBACK,
+  ADDFEEDBACK,
+  EDITFEEDBACK,
   BODYGUARD_TIME_KEEPING_PATH,
   BODYGUARD_DL_TIME_KEEPING_PATH,
   PROFILE_PATH,
@@ -36,7 +38,9 @@ import LayoutDefault from "./layouts/user/layout default/LayoutDefault";
 import News from "./pages/user/children/news/News";
 
 import DetailNews from "./pages/user/children/detail news/DetailNews";
-import Feedback from "./pages/user/children/feedback/Feedback";
+import Feedback from "./pages/user/children/Feedback/feed/Feedback";
+import AddFeedback from "./pages/user/children/Feedback/add/AddFeedback";
+import EditFeedback from "./pages/user/children/Feedback/edit/FixFeedback";
 import Contact from "./pages/user/children/contact/Contact";
 import Profile from "./pages/bodyguard/children/profile/Profile";
 import LayoutDefaultBodyGuard from "./layouts/body guard/layout default/LayoutDefaultBodyGuard";
@@ -133,6 +137,14 @@ const router = createBrowserRouter([
         element: <Feedback />,
       },
       {
+        path: ADDFEEDBACK,
+        element: <AddFeedback />,
+      },
+      {
+        path: EDITFEEDBACK,
+        element: <EditFeedback />,
+      },
+      {
         path: PROFILE_PATH,
         element: <UserProfile />,
       },
@@ -213,11 +225,7 @@ const router = createBrowserRouter([
   //     element: <ErrorPage/>
   //   },]
   // }
-  {
-    path: ADMIN_FEEDBACK_PATH,
-    element: <Feedback />,
-    errorElement: <NotFound />,
-  },
+
 
   // UI admin anđ staff into here
   // {

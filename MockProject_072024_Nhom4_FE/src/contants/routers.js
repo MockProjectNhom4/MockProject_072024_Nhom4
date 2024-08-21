@@ -12,11 +12,12 @@ export const REQUEST_LIST_PATH = "/request/list";
 
 
 
-export const ADMIN_FEEDBACK_PATH = "/admin/feedback";
 export const ADMIN_ACCOUNT = "/admin/manageaccount"
 export const CONTRACT_ADMIN = "/admin/contract"
 export const CONTACT = "/contact";
 export const FEEDBACK = "/feedback";
+export const ADDFEEDBACK = "/addfeedback";
+export const EDITFEEDBACK = "/editfeedback";
 export const PROFILE_PATH = "/profile"
 export const SERVICE_PATH = "/service";
 export const SERVICE_DETAIL_PATH = "service/:slug";

@@ -19,7 +19,7 @@ export default function Feedback() {
 
       <div className={style.feedback_create}>
         <h2>Feedback List</h2>
-        <button>Create</button>
+        <button><a href="./addfeedback">Create</a></button>
       </div>
 
       <div className={style.table}>
@@ -48,7 +48,7 @@ export default function Feedback() {
                 <td>4/5</td>
                 <td>
                     <div className={style.action}>
-                      <img src="../icon/feedback_edit.png" alt=""/>
+                      <a href="./editfeedback"><img src="../icon/feedback_edit.png" alt=""/></a>
                       <img src="../icon/feedback_dell.png" alt=""/>
                     </div>
                 </td>
