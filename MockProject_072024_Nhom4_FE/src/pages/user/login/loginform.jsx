@@ -32,8 +32,7 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(login, PASSWORD);
-    setError(""); // Reset thông báo lỗi trước khi gửi yêu cầu
+    setError("");
     if (!login || !PASSWORD) {
       setNotify(
         "Login failed!",
@@ -46,7 +45,7 @@ const Login = () => {
     try {
       const response = await axios.post(
         "https://intern-server-8n7t.onrender.com/api/login",
-        { login, PASSWORD } 
+        { login, PASSWORD }
       );
 
       if (response.data.token) {
@@ -103,10 +102,10 @@ const Login = () => {
             <div className={styles.containerInput}>
               <form onSubmit={handleSubmit}>
                 <div className={styles.formField}>
-                  <span>User name</span>
+                  <span>Login</span>
                   <input
                     type="text" // Thay đổi loại trường nhập nếu cần
-                    placeholder="User name"
+                    placeholder="Login"
                     className={styles.inputField}
                     value={login}
                     onChange={(e) => setLogin(e.target.value)}
