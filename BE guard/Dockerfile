@@ -1,4 +1,4 @@
-FROM openjdk:22-jdk-slim
+FROM gradle:jdk-22 as build
 WORKDIR /app
 
 CMD ["./gradlew", "clean", "bootJar"]

@@ -10,7 +10,6 @@ import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 
@@ -23,7 +22,6 @@ import java.util.List;
 @Slf4j
 public class RegistrationController {
 
-    @Autowired
     private RegistrationService service;
 
     @GetMapping("/helo")
@@ -74,4 +72,5 @@ public class RegistrationController {
     // 1: customize http, message response,
     // 4: validation: check type, min, max, space, ...
 
+    // http://localhost:8080/swagger-ui/index.html
 }
