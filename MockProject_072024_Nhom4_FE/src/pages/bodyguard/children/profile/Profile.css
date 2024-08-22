@@ -1,23 +1,26 @@
-.ProfileMain{
+.ProfileMain {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     max-width: 360px;
 }
-.Section1{
+
+.Section1 {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     gap: 20px;
 }
-.Avatar{
+
+.Avatar {
     margin: 20px;
     width: 180px;
     height: 155px;
 }
-.GuardName{
+
+.GuardName {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -26,7 +29,8 @@
     font-weight: bold;
     gap: 20px;
 }
-.Section2{
+
+.Section2 {
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -34,19 +38,23 @@
     font-size: 16px;
     margin-bottom: 20px;
 }
-.Section2 span{
+
+.Section2 span {
     margin-left: 30px;
 }
-.ColorText{
-    color:  #FFAC41;
+
+.ColorText {
+    color: #FFAC41;
     font-weight: 500;
 }
-.Certificate{
+
+.Certificate {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-.CertBtn{
+
+.CertBtn {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -56,15 +64,19 @@
     color: #989898;
     font-weight: 500;
 }
-.CertBtn:hover, .SaveButton:hover{
+
+.CertBtn:hover,
+.SaveButton:hover {
     background-color: #FFAC41;
     color: black;
     border: 2px solid black;
 }
-.SaveButton:hover{
+
+.SaveButton:hover {
     padding: 5px 30px;
 }
-.SaveButton{
+
+.SaveButton {
     margin-left: auto;
     background-color: #FFAC41;
     font-size: 15px;
@@ -75,6 +87,7 @@
     font-weight: 500;
     box-sizing: border-box;
 }
+
 /* Styles for screens larger than 360px */
 @media (min-width: 361px) {
     .ProfileMain {
@@ -106,44 +119,85 @@
 @media (min-width: 768px) {
     .ProfileMain {
         max-width: 800px;
-        display: flex; 
-        flex-direction: row; 
-        align-items: center; 
-        justify-content: center; 
-        gap: 30px; 
-        margin: 0 auto; 
-        box-sizing: border-box; 
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+        margin: 0 auto;
+        box-sizing: border-box;
         padding: auto;
     }
 
     .Section1 {
-        width: 40%; 
-        display: flex; 
-        flex-direction: column; 
+        width: 40%;
+        display: flex;
+        flex-direction: column;
         gap: 0;
-        align-items: center; 
-        justify-content: center; 
+        align-items: center;
+        justify-content: center;
     }
 
     .Avatar {
-        width: 100%; 
-        height: auto; 
-        display: block; 
+        width: 100%;
+        height: auto;
+        display: block;
     }
 
-    .GuardName{
+    .GuardName {
         font-size: 32px;
     }
 
     .Section2 {
-        width: 60%; 
-        display: flex; 
-        flex-direction: column; 
+        width: 60%;
+        display: flex;
+        flex-direction: column;
         gap: 10px;
-        justify-content: center; 
+        justify-content: center;
     }
 
-    .Certificate > button{
+    .Certificate > button {
         margin: 0 auto 0 30px;
     }
+}
+
+/* Styles for form in editing mode */
+.ProfileForm {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.ProfileForm h3 {
+    margin: 5px 0;
+}
+
+.ProfileForm input,
+.ProfileForm select {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.ProfileForm input[type="date"] {
+    width: 100%;
+}
+
+.ProfileForm input[type="checkbox"] {
+    margin-left: 10px;
+}
+
+.SaveButton {
+    background-color: #FFAC41;
+    color: white;
+    font-size: 15px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.SaveButton:hover {
+    background-color: #e88e1f;
 }

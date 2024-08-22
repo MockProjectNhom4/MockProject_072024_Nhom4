@@ -24,7 +24,7 @@ export const SERVICE_DETAIL_PATH = "service/:slug";
 
 
 export const BODYGUARD_PATH = "/bodyguard";
-export const BODYGUARD_PROFILE_PATH = "/bodyguard/profile";
+export const BODYGUARD_PROFILE_PATH = "/bodyguard/profile/:id";
 export const BODYGUARD_WORKING_SCHEDULE_PATH = "/bodyguard/working_schedule";
 export const BODYGUARD_TRAINING_SCHEDULE_PATH = "/bodyguard/training_schedule";
 export const BODYGUARD_TIME_KEEPING_PATH = "/bodyguard/time_keep";
