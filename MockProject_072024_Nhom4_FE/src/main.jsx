@@ -30,6 +30,7 @@ import {
   ADMIN_PATH,
   ADMIN_ACCOUNT,
   CONTRACT_ADMIN,
+  BODYGUARD_REQUEST_DAYOFF_PATH,
 } from "./contants/routers";
 
 import NotFound from "./pages/error/NotFound";
@@ -65,6 +66,7 @@ import AdminLayout from "./layouts/admin/layout default/LayoutAdminPage";
 import Content from "./pages/Admin/children/AccountManage/AccountManage";
 import Contract from "./pages/Admin/children/Contract/Contract";
 import Rate from "./pages/bodyguard/children/rate/Rate";
+import Request1 from "./pages/bodyguard/children/request/Request1";
 // const router = createBrowserRouter([
 // >>>>>>> c0e129fd8d3848b8adeb09d9a54b6278d1bb5b9f
 
@@ -108,6 +110,10 @@ const router = createBrowserRouter([
       {
         path:BODYGUARD_RATE_PATH,
         element:<Rate/>,
+      },
+      {
+        path:BODYGUARD_REQUEST_DAYOFF_PATH,
+        element:<Request1/>,
       }
     ],
     errorElement: <NotFound />,

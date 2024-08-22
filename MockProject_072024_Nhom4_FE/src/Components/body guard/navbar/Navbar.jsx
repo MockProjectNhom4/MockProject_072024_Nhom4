@@ -7,7 +7,8 @@ import {
   BODYGUARD_TIME_KEEPING_PATH,
   BODYGUARD_TRAINING_SCHEDULE_PATH,
   BODYGUARD_WORKING_SCHEDULE_PATH,
-  BODYGUARD_RATE_PATH
+  BODYGUARD_RATE_PATH,
+  BODYGUARD_REQUEST_DAYOFF_PATH
 } from "../../../contants/routers";
 import { Link, useNavigate } from "react-router-dom";
 import "./Navbar.css";
@@ -60,7 +61,7 @@ export default function Navbar() {
               <Link to={BODYGUARD_WORKING_SCHEDULE_PATH} className="ItemLink">
                 Schedule
               </Link>
-              <Link to="#" className="ItemLink">
+              <Link to={BODYGUARD_REQUEST_DAYOFF_PATH} className="ItemLink">
                 Requests
               </Link>
               <Link to={BODYGUARD_RATE_PATH} className="ItemLink">
