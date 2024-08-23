@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'rest_framework',
     "corsheaders",
     'django_filters',
+    'drf_yasg',
 ]
 
 MIDDLEWARE = [
@@ -53,8 +54,6 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     "corsheaders.middleware.CorsMiddleware",
-    "django.middleware.common.CommonMiddleware",
-    "django.middleware.security.SecurityMiddleware",
     "whitenoise.middleware.WhiteNoiseMiddleware",
 ]
 
@@ -175,4 +174,4 @@ MEDIA_ROOT = 'static/images'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-CORS_ALLOW_ALL_ORGIN = True
+CORS_ALLOW_ALL_ORGINS = True
