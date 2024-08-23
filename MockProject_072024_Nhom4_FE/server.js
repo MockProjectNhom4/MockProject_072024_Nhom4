@@ -54,6 +54,30 @@ app.put('/bodyguard/profile', async (req, res) => {
     }
 });
 
+app.post('/bodyguard/request/dayoff', async(req, res) => {
+    const { guardid, timefrom, approverid, reasons, timeto } = req.body;
+
+    const isapprove = req.body.isapprove || 'Pending';
+    const deleted = req.body.deleted !== undefined ? req.body.deleted : false;
+
+    try {
+        const query = `
+            INSERT INTO tbl_dayoff (guardid, timefrom, isapproved, approverid, deleted, reasons, timeto)
+            VALUES ($1, $2, $3, $4, $5, $6, $7)
+            RETURNING id;
+        `;
+        
+        const values = [guardid, timefrom, isapprove, approverid, deleted, reasons, timeto];
+        
+        const result = await pool.query(query, values);
+
+        const newId = result.rows[0].id;
+        res.status(201).json({ id: newId });
+    } catch (err) {
+        console.error('Error inserting data:', err);
+        res.status(500).json({ error: 'Internal Server Error' });
+    }
+});
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
